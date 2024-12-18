@@ -1,8 +1,8 @@
 ## Copyright ©
 
-Content Created by [Tajamul Khan](https://github.com/tajamulk2)
-* Check out more [Repositories](https://github.com/tajamulk2)
-* Let's connect over [Linked In](https://www.linkedin.com/in/tajamulk2/)
+Content Created by [Tajamul Khan](https://github.com/tajamulk)
+* Check out more [Repositories](https://github.com/tajamulk)
+* Let's connect over [Linked In](https://www.linkedin.com/in/tajamulk/)
 
 ## Support my Work
 
