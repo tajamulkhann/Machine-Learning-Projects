@@ -33,4 +33,4 @@ Project Completed by [Tajamul Khan](https://github.com/tajamulkhann)
 ## Support my Work
 If my work has helped you, I’d truly appreciate your support!
 
-![Screenshot 2025-02-25 at 1 21 37 AM (2)](https://github.com/user-attachments/assets/c122c416-dfff-42a1-b322-2f6a9a00723e)
+![Untitled design (10)](https://github.com/user-attachments/assets/127762f6-edae-4bea-989a-5296cf161ed3)
