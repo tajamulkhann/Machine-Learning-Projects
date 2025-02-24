@@ -1,6 +1,6 @@
 ## Copyright ©
 
-Project Completed by [Tajamul Khan](https://github.com/tajamulkhann)
+Machine Learning Projects Completed by [Tajamul Khan](https://github.com/tajamulkhann)
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
