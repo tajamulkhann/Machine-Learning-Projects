@@ -27,6 +27,10 @@ Goal of this notebook is the application of several machine learning techniques 
 
 Project Completed by [Tajamul Khan](https://github.com/tajamulkhann)
 
+## Copyright ©
+
+Project Completed by [Tajamul Khan](https://github.com/tajamulkhann)
+
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
   <a href="https://www.linkedin.com/in/tajamulkhann/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
@@ -37,7 +41,9 @@ Project Completed by [Tajamul Khan](https://github.com/tajamulkhann)
   <a href="https://substack.com/@tajamulkhan"><img src="https://img.shields.io/badge/Substack-%23006f5c.svg?style=for-the-badge&logo=substack&logoColor=FF6719"></a>
 
 ## Support my Work
-![Screenshot 2025-02-25 at 1 21 37 AM (2)](https://github.com/user-attachments/assets/3cb5f022-8734-46b9-9cb1-218f1e3c9c87)
+If my work has helped you, I’d truly appreciate your support!
+
+![Untitled design (10)](https://github.com/user-attachments/assets/127762f6-edae-4bea-989a-5296cf161ed3)
 
 
 

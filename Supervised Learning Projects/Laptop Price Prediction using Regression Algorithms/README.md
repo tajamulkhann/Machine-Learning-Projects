@@ -1,22 +1,23 @@
-# Kidney Stone Prediction using Classification Algorithms
+# Laptop Price Prediction using Regression Algorithms
 
 ###
 
-Objective of this project is to find a way to predict kidney stones simply by asking for basic information.
+Objective of this project is to predict prices of Laptops. We have to analyse the historical data and based on that find insights and make predictions effectively.
 
 ## Tech Stack
 
-**Language:** Python.
+**Language:** Python
 
-**Libraries:** numpy, pandas, seaborn, matplotlib, statistics, math, scipy, sklearn.
+**Libraries:** numpy, pandas, seaborn, matplotlib, scipy, sklearn.
 
 ## Appendix
 
 * Exploratory Data Analysis
-* Classification Models Used: 
-    *  Logistic, 
-    *  DecisionTree, 
-    *  RandomForest
+* Tree Plot
+* Models Used: 
+    * LinearRegressor,
+    * DecisionTreeRegressor,
+    * RandomForestRegressor,
 
 ## Copyright ©
 

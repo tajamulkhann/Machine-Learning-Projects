@@ -29,4 +29,9 @@ Project Completed by [Tajamul Khan](https://github.com/tajamulkhann)
   <a href="https://www.youtube.com"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white"></a>
   <a href="https://github.com/tajamulkhann"><img src="https://img.shields.io/badge/Github-12100E?style=for-the-badge&logo=github&logoColor=white"></a>
   <a href="https://substack.com/@tajamulkhan"><img src="https://img.shields.io/badge/Substack-%23006f5c.svg?style=for-the-badge&logo=substack&logoColor=FF6719"></a>
+
+## Support my Work
+If my work has helped you, I’d truly appreciate your support!
+
+![Untitled design (10)](https://github.com/user-attachments/assets/127762f6-edae-4bea-989a-5296cf161ed3)
     
