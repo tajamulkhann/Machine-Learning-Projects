@@ -1,3 +1,7 @@
+## Machine Learning
+[Supervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Supervised%20Learning%20Projects)
+[Unsupervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Unsupervised%20Learning%20Projects)
+
 ## Copyright ©
 
 Machine Learning Projects Completed by [Tajamul Khan](https://github.com/tajamulkhann)
