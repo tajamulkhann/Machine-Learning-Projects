@@ -1,4 +1,4 @@
-# AirBnB Stock Price Prediction Using Regression Algorithms
+# AirBnB Stock Price Prediction
 
 ###
 
