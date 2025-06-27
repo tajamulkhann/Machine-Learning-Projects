@@ -1,11 +1,13 @@
-## Machine Learning
+# Machine Learning Projects
+This repository showcases a collection of creative Machine Learning projects, covering both Supervised and Unsupervised learning techniques — each project designed to be practical, insightful, and beginner-friendly.
+
 [Supervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Supervised%20Learning%20Projects)
 
 [Unsupervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Unsupervised%20Learning%20Projects)
 
 ## Copyright ©
 
-Machine Learning Projects Completed by [Tajamul Khan](https://github.com/tajamulkhann)
+Machine Learning Projects Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
