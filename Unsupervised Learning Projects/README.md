@@ -1,5 +1,3 @@
-## Copyright ©
-
 Machine Learning Projects Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
 
 ## Support my Work
