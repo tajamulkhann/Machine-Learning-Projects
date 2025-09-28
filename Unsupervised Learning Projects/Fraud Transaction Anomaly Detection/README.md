@@ -1,4 +1,4 @@
-# Anomaly Detection (Unsupervised)
+# Fraud Transaction Detection using Anomaly Detection
 
 ## Objective
 Detect unusual transactions that deviate from normal user behavior to surface potential fraud **without relying on labeled data**, supporting faster triage and investigation.
