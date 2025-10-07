@@ -1,4 +1,5 @@
 # Machine Learning Projects
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/ea0462b6-73d1-4567-a1fe-533b11fa1d23" />
 
 This repository showcases a collection of creative Machine Learning projects, covering both Supervised and Unsupervised learning techniques — each project designed to be practical, insightful, and beginner-friendly.
 
