@@ -1,5 +1,5 @@
 # Machine Learning Projects
-![alt text](image.png)
+
 This repository showcases a collection of creative Machine Learning projects, covering both Supervised and Unsupervised learning techniques — each project designed to be practical, insightful, and beginner-friendly.
 
 [Supervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Supervised%20Learning%20Projects)
