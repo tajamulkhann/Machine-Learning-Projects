@@ -4,7 +4,7 @@
 
 [Unsupervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Unsupervised%20Learning%20Projects)
 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/ea0462b6-73d1-4567-a1fe-533b11fa1d23" />
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/12905a9b-ac44-4115-8faa-473a666c9651" />
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
