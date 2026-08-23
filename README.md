@@ -18,8 +18,6 @@ A practical machine learning portfolio by **Tajamul Khan**, organised around rep
 - Verified results only; no invented performance claims
 - Security checks for credentials, tokens and private paths
 
-Start with the [supervised learning project directory](Supervised%20Learning%20Projects/README.md) for the fully refurbished collection.
-
 ## Author
 
 **Tajamul Khan**
