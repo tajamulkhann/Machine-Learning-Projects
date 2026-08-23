@@ -24,8 +24,6 @@ Start with the [supervised learning project directory](Supervised%20Learning%20P
 
 **Tajamul Khan**
 
-[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
-
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
 <div align="center">
