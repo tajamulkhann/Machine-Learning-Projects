@@ -1,4 +1,4 @@
-# Unsupervised Machine Learning Projects 
+# Unsupervised Machine Learning Projects
 
 Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
 
@@ -37,5 +37,3 @@ Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
 <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white">
 </a>
 </div>
-
-

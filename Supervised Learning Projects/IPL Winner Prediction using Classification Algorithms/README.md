@@ -1,105 +1,68 @@
-# 🏏 IPL Winner Prediction using Classification Algorithms
+# IPL Winner Prediction using Classification Algorithms
 
-A machine learning project focused on predicting the winning team for matches in the Indian Premier League (IPL) using team statistics, match features, and classification models.
+Predict whether the listed home-side team wins an IPL-style match from pre-match context without using post-match leakage.
 
----
+## Why this project matters
 
-## 📌 Project Overview
+This is a portfolio-ready supervised-learning workflow built around a current business use case. It shows how to move from a documented data contract to a baseline, a validated model, honest holdout evaluation, and responsible interpretation.
 
-This project builds a comprehensive pipeline: gathering historical IPL match data (teams, venue, toss, score, player stats), performing exploratory analysis to reveal patterns, engineering features relevant to match outcome, training classification models, and evaluating their performance. The goal is to predict the winning team and derive key factors that influence match results.
+## Problem framing
 
----
+- **Learning type:** Supervised classification
+- **Primary methods:** logistic regression and random forests
+- **Evaluation:** macro F1 and class-level diagnostics
+- **Decision boundary:** Predictions support prioritization and review; they do not replace domain judgment.
 
-## 🧰 Tech Stack
+## Data
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+The notebook creates a deterministic, domain-shaped demonstration dataset locally. This keeps the project executable and avoids publishing private or questionably licensed data. The schema, target, caveats, and migration path to real data are documented in the notebook.
 
----
+## Workflow
 
-## 🔄 Workflow Summary
+1. Reproducible environment and seed
+2. Data contract and quality checks
+3. Exploratory analysis
+4. Leakage-safe or chronological split
+5. Baseline and candidate-model comparison
+6. Holdout metrics and diagnostics
+7. Explainability or operational interpretation
+8. Limitations, monitoring, and next steps
 
-### 1. Data Collection
+## Results
 
-Dataset includes features such as: match date, venue, toss winner, batting first/second, teams playing, score statistics, recent team form, and target label indicating match winner.
+The notebook is committed with executed outputs. Open [ipl_winner_classification.ipynb](ipl_winner_classification.ipynb) to inspect the actual model comparison, plots, holdout metrics, diagnostics, and sample predictions generated from the reproducible demo data.
 
-### 2. Exploratory Data Analysis (EDA)
+## Run locally
 
-* Distribution of wins by team, venue, toss outcome
-* Visualisations of team performance by venue, head-to-head matchups, toss decision impact
-* Correlation heatmap of numeric features
-* Identification of missing values or anomalies
-
-### 3. Feature Engineering
-
-* Encoding categorical variables (team names, venues, toss outcome)
-* Creating derived features such as recent form (last 5 matches), average runs scored at venue, toss win lead performance
-* Incorporating match-specific features (home/away, venue bounce rates)
-* Splitting dataset into training and test sets with stratified sampling
-
-### 4. Modeling
-
-Classification algorithms applied:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **(Optional) Gradient Boosting / XGBoost** for elevated performance
-
-### 5. Evaluation
-
-Metrics employed to measure model performance:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC-AUC (where applicable)
-
-**Result:** The top performing classifier achieved strong accuracy in predicting the winning team, with derived features like toss decision, recent form and venue advantage contributing highly.
-
-### 6. Prediction & Insights
-
-* Generated predictions for upcoming or unseen matches
-* Analysed feature importance: recent team form, venue history, toss decision emerged as critical predictors
-* Offered practical insights: teams winning toss at certain venues and batting first exhibited edge; recent form carried significant weight
-
----
-
-## 📁 Project Structure
-
-```
-IPL-Winner-Prediction/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab "ipl_winner_classification.ipynb"
 ```
 
----
+Run cells from top to bottom. Use the recorded package versions and replace the demo data only after matching the documented schema.
 
-## 📈 Key Findings
+## Technologies
 
-* Toss winners batting first at specific venues had higher win probabilities
-* Recent performance indicators (last 5 matches) strongly influenced match outcome predictions
-* Feature engineering (venue form, toss decision) significantly improved model performance over raw match stats
-* The classification pipeline provides actionable insights for analysts, fans and fantasy players
+- Python
+- pandas and NumPy
+- scikit-learn
+- Matplotlib and Seaborn
+- Jupyter Notebook
 
----
+## Limitations and next steps
 
-## 🚀 Future Improvements
+- Demo metrics are not production benchmarks.
+- Validate on licensed, representative, time-appropriate data.
+- Audit leakage, calibration, subgroup behavior, drift, and business error costs.
+- Add human-review, monitoring, retraining, and rollback policies before deployment.
 
-* Incorporate player-level data (batting/bowling form, match fitness, injuries) for richer feature set
-* Use time-series or deep learning approaches (e.g., RNN) to model momentum across matches
-* Build a web app or API for live match-winner prediction or fantasy insights
-* Monitor model fairness across teams and venues, ensure no bias toward historically dominant teams
-* Continuously retrain model with fresh match data each season for improved relevance
+## Author
 
----
+**Tajamul Khan**
 
-## 🧑‍💻 Author
-
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -108,7 +71,7 @@ IPL-Winner-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

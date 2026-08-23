@@ -1,105 +1,110 @@
-# 🏦 Loan Approval Prediction using Classification Algorithms
+# Loan Approval Classification
 
-A machine learning project focused on predicting the approval status of loan applications using classification models, financial and applicant data, and feature engineering.
+Classify loan approval from applicant, income, loan and credit-history attributes.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project covers the complete workflow: collecting and preprocessing loan application data (such as applicant income, credit history, property area, loan amount), performing exploratory analysis to uncover patterns in approvals, engineering relevant features, training classification models, and evaluating their performance. The primary objective is to build a system to predict whether a loan application will be approved or rejected and provide actionable insights for lenders.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `Loan_Status`
+- **Primary metric:** Macro F1
+- **Goal:** Classify loan approval from applicant, income, loan and credit-history attributes.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Included: `loan-train.csv`
+- **Recorded source:** Training and scoring files are included in this project.
+- **Target:** `Loan_Status`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset includes features like: applicant income, co-applicant income, loan amount, loan term, credit history, property area, marital status, education level, employment status, and target variable indicating loan approval status.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of approved vs rejected applications
-* Feature distributions (income, loan amount, credit history) across target classes
-* Correlation heatmap of numeric features
-* Identification of missing values, outliers and class imbalance
-
-### 3. Feature Engineering
-
-* Encoding categorical variables (e.g., property area, education, employment status)
-* Creating derived features such as income to loan amount ratio, co-applicant presence flag
-* Scaling numerical features (standardization/normalization) where necessary
-* Splitting dataset into training and test sets with stratified sampling
-
-### 4. Modeling
-
-Classification algorithms applied:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **(Optional) Gradient Boosting / XGBoost** for further improvement
-
-### 5. Evaluation
-
-Metrics used for model performance assessment:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC-AUC
-
-**Result:** The best performing classifier achieved high predictive accuracy, indicating that engineered features and classification models successfully distinguish approved vs rejected applications.
-
-### 6. Prediction & Insights
-
-* Generated predictions for new loan applications
-* Analysed feature importance: applicant income, credit history, income to loan amount ratio emerged as key predictors
-* Provided actionable recommendations for lenders: target low-income but strong credit history applicants, adjust risk thresholds accordingly
-
----
-
-## 📁 Project Structure
-
-```
-Loan-Approval-Prediction/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- The Kaggle-only absolute path was replaced with a portable project-relative path.
+- loan-test.csv remains an optional unlabeled scoring set.
 
-* Applicants with strong credit history and higher income to loan ratios had significantly higher approval chances
-* Derived features like income to loan amount ratio improved model discrimination
-* Classification models such as Random Forest outperformed baseline logistic regression
-* The predictive pipeline supports lenders in automating decision-making and identifying high-risk applications
+### Models compared
 
----
+- Logistic Regression
+- Decision Tree
+- Random Forest
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Integrate additional data sources such as employment history, debt-to-income ratio, external credit bureau scores
-* Explore neural networks or ensemble stacking to further boost performance
-* Deploy model via a web interface or API for real-time application screening
-* Implement fairness and bias analysis across demographic groups (gender, region) to ensure equitable lending
-* Enable continuous model monitoring and retraining using incoming application data
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The refurbished notebook was executed successfully against the dataset currently committed in this project. The untouched holdout produced:
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+| Selected model | Accuracy | Macro F1 |
+|---|---:|---:|
+| Logistic Regression | 0.8618 | 0.8147 |
+
+These values are a reproducibility record for the current data and dependency range, not a production benchmark.
+
+## Repository structure
+
+```text
+├── loan_approval_classification.ipynb
+├── README.md
+└── loan-train.csv
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'loan_approval_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -108,7 +113,7 @@ Loan-Approval-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">
