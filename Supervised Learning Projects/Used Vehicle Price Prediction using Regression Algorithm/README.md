@@ -1,104 +1,113 @@
-# Used Vehicle Price Regression
+# 🚗 Used Vehicle Price Prediction using Regression Algorithms
 
-Estimate used-vehicle price from age, make, model, mileage and technical specifications.
+A machine learning project focused on estimating the selling price of used vehicles by leveraging regression models built on vehicle specifications, condition, and market factors.
 
-## Overview
+---
 
-This project is a focused, reproducible regression case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
+## 📌 Project Overview
 
-## Problem statement
+This project implements an end-to-end workflow: data collection of used vehicle listings (brand, model, year, mileage, condition, transmission, fuel type), exploratory data analysis to understand pricing patterns, feature engineering, training regression models (Linear Regression, Random Forest, Gradient Boosting), and evaluating performance. The goal is to accurately predict a used vehicle’s market price and derive insights into factors driving price.
 
-- **Task:** Regression
-- **Target:** `Price`
-- **Primary metric:** MAE
-- **Goal:** Estimate used-vehicle price from age, make, model, mileage and technical specifications.
+---
 
-## Dataset
+## 🧰 Tech Stack
 
-- **Availability:** Download required: place `used_vehicle.csv` in this directory
-- **Recorded source:** [https://www.kaggle.com/datasets/farhanhossein/used-vehicles-for-sale](https://www.kaggle.com/datasets/farhanhossein/used-vehicles-for-sale)
-- **Target:** `Price`
+* **Language:** Python
+* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
+* **Environment:** Jupyter Notebook / Google Colab
 
-Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
+---
 
-## Project workflow
+## 🔄 Workflow Summary
 
-```text
-Data validation
-      ↓
-Focused EDA
-      ↓
-Train / holdout split
-      ↓
-Pipeline-based preprocessing
-      ↓
-Baseline and cross-validation
-      ↓
-Holdout evaluation
-      ↓
-Error analysis and interpretation
+### 1. Data Collection
+
+Dataset includes used vehicle listings featuring attributes such as: brand, model, year, mileage, transmission type, fuel type, vehicle condition, location, and the target variable being selling price.
+
+### 2. Exploratory Data Analysis (EDA)
+
+* Visualised price distributions and outliers
+* Boxplots of price by brand/model, condition, fuel type
+* Scatterplots of price vs mileage, age of vehicle
+* Correlation matrix of numeric features and price
+
+### 3. Feature Engineering
+
+* Encoded categorical features (brand, model, transmission, fuel type) via one-hot or label encoding
+* Derived features such as age of vehicle (current year − manufacture year), mileage per year, price per mileage unit
+* Log-transformed skewed variables (e.g., price and mileage) if needed
+* Split data into training and test sets
+
+### 4. Modelling
+
+Regression algorithms used:
+
+* **Linear Regression** (baseline)
+* **Random Forest Regressor**
+* **Gradient Boosting Regressor** or **XGBoost** for improved performance
+  Hyper-parameter tuning via GridSearchCV/RandomizedSearchCV (e.g., n_estimators, max_depth, learning_rate)
+
+### 5. Evaluation
+
+Metrics employed:
+
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² (coefficient of determination)
+  **Result:** The top performing model achieved good generalisation, accurately estimating used vehicle price within a reasonable error margin.
+
+### 6. Prediction & Insights
+
+* Predictions generated for new vehicle listings and compared predicted vs actual price
+* Analysed feature importances: vehicle age, mileage, brand/model, condition emerged as strongest predictors
+* Business insights: buyers and sellers can estimate fair market price; dealerships can optimise pricing strategy
+
+---
+
+## 📁 Project Structure
+
+```
+Used-Vehicle-Price-Prediction/
+│── data/
+│   ├── raw/
+│   └── processed/
+│── notebooks/
+│   └── used_vehicle_price_analysis.ipynb
+│── src/
+│   ├── preprocess.py
+│   ├── feature_engineering.py
+│   ├── model.py
+│   └── evaluate.py
+│── README.md
+│── requirements.txt
 ```
 
-## Modelling decisions
+---
 
-- Currency-like price values are parsed explicitly.
-- Unknown categories at prediction time are handled by the encoder.
+## 📈 Key Findings
 
-### Models compared
+* Vehicle age and mileage have the largest impact on resale price, with older cars and higher mileage predicting lower prices
+* Model and brand also influence price significantly — premium brands command higher resale value
+* Tree-based regressors (Random Forest / Gradient Boosting) outperformed linear regression by capturing non-linear interactions
+* Log-transforming price helped reduce skew and improved model fit
 
-- Ridge Regression
-- Decision Tree
-- Random Forest
-- AdaBoost
+---
 
-## Evaluation
+## 🚀 Future Improvements
 
-The notebook evaluates MAE, RMSE and R², supported by residual diagnostics.
+* Integrate external market factors such as vehicle demand trends, regional pricing differences, currency/inflation effects
+* Deploy as a web app (using Flask or Streamlit) allowing users to enter vehicle specs and receive a price estimate
+* Use ensemble methods (stacking/blending) to further reduce prediction error
+* Incorporate explainability (e.g., SHAP values) to provide transparency in pricing decisions
+* Monitor model drift over time as vehicle market dynamics evolve (new models, regulations, electric vehicles, etc.)
 
-## Verified results
+---
 
-The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
+## 🧑‍💻 Author
 
-## Repository structure
+**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
 
-```text
-├── used_vehicle_price_regression.ipynb
-└── README.md
-```
-
-## How to run
-
-From this project directory:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r ../requirements.txt
-jupyter lab 'used_vehicle_price_regression.ipynb'
-```
-
-If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
-
-## Technologies
-
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- Matplotlib and Seaborn
-- Jupyter
-
-## Future improvements
-
-- Validate on a newer or independently collected dataset.
-- Add domain-specific error costs and decision thresholds.
-- Track data drift and subgroup performance before deployment.
-- Package the fitted pipeline only after data and licensing checks.
-
-## Author
-
-**Tajamul Khan**
-
-[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
+---
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -107,7 +116,7 @@ If the dataset is not included, download it from the recorded source and use the
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
+<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

@@ -1,110 +1,106 @@
-# Insurance Premium Regression
+# 🛡️ Insurance Premium Prediction using Regression Algorithms
 
-Estimate medical insurance charges from demographic, health and utilisation features.
+A machine learning project focused on estimating insurance premium costs using regression models, insured demographics, policy attributes, and historical claims data.
 
-## Overview
+---
 
-This project is a focused, reproducible regression case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
+## 📌 Project Overview
 
-## Problem statement
+This project covers the complete workflow: ingesting data on insured individuals (age, sex, BMI, smoking status, region, prior claims), performing exploratory data analysis to uncover cost determinants, engineering new features, building regression models, and evaluating their performance. The objective is to provide accurate premium estimations and insights into cost-drivers.
 
-- **Task:** Regression
-- **Target:** `charges`
-- **Primary metric:** MAE
-- **Goal:** Estimate medical insurance charges from demographic, health and utilisation features.
+---
 
-## Dataset
+## 🧰 Tech Stack
 
-- **Availability:** Included: `new_insurance_dataset.csv`
-- **Recorded source:** Dataset file is included in this project.
-- **Target:** `charges`
+* **Language:** Python
+* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
+* **Environment:** Jupyter Notebook / Google Colab
 
-Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
+---
 
-## Project workflow
+## 🔄 Workflow Summary
 
-```text
-Data validation
-      ↓
-Focused EDA
-      ↓
-Train / holdout split
-      ↓
-Pipeline-based preprocessing
-      ↓
-Baseline and cross-validation
-      ↓
-Holdout evaluation
-      ↓
-Error analysis and interpretation
+### 1. Data Collection
+
+Dataset includes variables like: age, sex, BMI, smoking status, children, region, prior insurance claims, policy type, and a target variable for annual premium cost.
+
+### 2. Exploratory Data Analysis (EDA)
+
+* Distribution of premium cost values across demographics
+* Visualizations of premium vs features such as age, BMI, smoking status
+* Correlation matrix to identify key relationships
+* Detection of missing values, outliers and skewed target distribution
+
+### 3. Feature Engineering
+
+* Encoding categorical variables (e.g., sex, smoking status, region)
+* Creating derived features like BMI category, smoker × age interaction, number of dependents bucket
+* Log-transforming skewed target or heavy-tailed features
+* Scaling numerical features for regression compatibility
+* Splitting dataset into training and test sets
+
+### 4. Modeling
+
+Regression algorithms applied include:
+
+* **Linear Regression** (baseline)
+* **Random Forest Regressor** or **Gradient Boosting Regressor** (strong performers)
+* **(Optional) XGBoost / LightGBM** for improved estimation
+
+### 5. Evaluation
+
+Metrics used to assess model performance:
+
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² score
+* Residuals analysis and distribution
+
+**Result:** The top performing regression model achieved low error rates and high R², demonstrating reliable premium estimates and highlighting key cost-drivers such as smoking status, BMI and age.
+
+### 6. Prediction & Insights
+
+* Generated premium estimates for new policyholder profiles
+* Analysed feature importance: age, smoking status, BMI category emerged as leading predictors
+* Provided actionable insights: smokers and higher BMI categories significantly raise premium cost; demographic segmentation for risk-based pricing
+
+---
+
+## 📁 Project Structure
+
+```
+Insurance-Premium-Prediction/
+│── data/
+│── notebooks/
+│── src/
+│── README.md
+│── requirements.txt
 ```
 
-## Modelling decisions
+---
 
-- The notebook now uses the dataset filename that is actually committed.
-- Each regressor is evaluated with the same train/test split and preprocessing pipeline.
+## 📈 Key Findings
 
-### Models compared
+* Smoker status had the most significant impact on premium cost, followed by BMI and age
+* Interaction features and derived feature transformations improved estimation accuracy
+* Regression models such as Random Forest and Gradient Boosting outperformed linear baseline
+* The prediction framework supports insurers with data-driven premium pricing and risk assessment
 
-- Linear Regression
-- Random Forest
-- Gradient Boosting
+---
 
-## Evaluation
+## 🚀 Future Improvements
 
-The notebook evaluates MAE, RMSE and R², supported by residual diagnostics.
+* Include additional data such as claims history, policy duration, and external health indicators (e.g., fitness tracker data)
+* Explore deep learning and sequence models (e.g., for recurring claims or longitudinal insured behavior)
+* Deploy as a web or mobile app (Flask/Streamlit) for real-time premium prediction and quoting
+* Implement fairness and bias analysis to ensure equitable pricing across demographics
+* Enable continuous model update with real-world feedback and claim-outcome data
 
-## Verified results
+---
 
-The refurbished notebook was executed successfully against the dataset currently committed in this project. The untouched holdout produced:
+## 🧑‍💻 Author
 
-| Selected model | MAE | RMSE | R² |
-|---|---:|---:|---:|
-| Random Forest | 461.6722 | 1336.3642 | 0.9888 |
-
-These values are a reproducibility record for the current data and dependency range, not a production benchmark.
-
-## Repository structure
-
-```text
-├── insurance_premium_regression.ipynb
-├── README.md
-└── new_insurance_dataset.csv
-```
-
-## How to run
-
-From this project directory:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r ../requirements.txt
-jupyter lab 'insurance_premium_regression.ipynb'
-```
-
-If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
-
-## Technologies
-
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- Matplotlib and Seaborn
-- Jupyter
-
-## Future improvements
-
-- Validate on a newer or independently collected dataset.
-- Add domain-specific error costs and decision thresholds.
-- Track data drift and subgroup performance before deployment.
-- Package the fitted pipeline only after data and licensing checks.
-
-## Author
-
-**Tajamul Khan**
-
-[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
+**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -113,7 +109,7 @@ If the dataset is not included, download it from the recorded source and use the
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
+<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

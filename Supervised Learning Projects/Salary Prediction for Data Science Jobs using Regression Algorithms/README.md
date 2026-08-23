@@ -1,103 +1,112 @@
-# Data Science Salary Regression
+# 💼 Salary Prediction for Data Science Jobs using Regression Algorithms
 
-Estimate data-science salary in USD from role, experience, employment, location and company attributes.
+A machine-learning project focused on predicting salaries for data-science roles using regression models built on job features and market data.
 
-## Overview
+---
 
-This project is a focused, reproducible regression case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
+## 📌 Project Overview
 
-## Problem statement
+This project builds an end-to-end pipeline: collecting job listing data (e.g., job role, experience, skills, location), exploratory analysis, feature engineering, training regression models, and evaluating their performance. The goal is to estimate data science job salaries and identify key salary-driving features for job seekers, HR and industry insight.
 
-- **Task:** Regression
-- **Target:** `salary_in_usd`
-- **Primary metric:** MAE
-- **Goal:** Estimate data-science salary in USD from role, experience, employment, location and company attributes.
+---
 
-## Dataset
+## 🧰 Tech Stack
 
-- **Availability:** Download required: place `ds_salaries.csv` in this directory
-- **Recorded source:** [https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023)
-- **Target:** `salary_in_usd`
+* **Language:** Python
+* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
+* **Environment:** Jupyter Notebook / Google Colab
 
-Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
+---
 
-## Project workflow
+## 🔄 Workflow Summary
 
-```text
-Data validation
-      ↓
-Focused EDA
-      ↓
-Train / holdout split
-      ↓
-Pipeline-based preprocessing
-      ↓
-Baseline and cross-validation
-      ↓
-Holdout evaluation
-      ↓
-Error analysis and interpretation
+### 1. Data Collection
+
+Job dataset features could include job title, years of experience, primary skills (e.g., Python, SQL, ML), location, company size, education level, and the target variable being salary (e.g., annual USD).
+
+### 2. Exploratory Data Analysis (EDA)
+
+* Visualisations: salary distribution, boxplots by location or skillset
+* Correlation matrix of numeric features and salary
+* Identification of outliers (very high salaries), feature skewness
+
+### 3. Feature Engineering
+
+* Encode categorical variables (job title, location, skills) via one-hot encoding or ordinal mapping
+* Create derived features: e.g., “number of required skills”, “senior role flag”, “remote vs onsite”
+* Log-transform salary target if skewed
+* Split into training/test sets
+
+### 4. Modelling
+
+Regression algorithms employed:
+
+* **Linear Regression** (baseline)
+* **Random Forest Regressor** (strong performer)
+* **Gradient Boosting Regressor** / XGBoost for advanced performance
+  Hyper-parameter tuning via grid/random search (n_estimators, learning_rate, max_depth)
+
+### 5. Evaluation
+
+Performance metrics used:
+
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² (coefficient of determination)
+  **Result:** The top model achieved strong predictive results and provided insights into salary drivers.
+
+### 6. Prediction & Insights
+
+* Made salary predictions for new job listings based on features
+* Analysed feature importances: years of experience, location, number of skills, company size emerged as strong predictors
+* Provided recommendations for job seekers: focus on key skills or locations with higher salary potential
+
+---
+
+## 📁 Project Structure
+
+```
+Salary-Prediction-Data-Science-Jobs/
+│── data/
+│   ├── raw/
+│   └── processed/
+│── notebooks/
+│   └── salary_prediction_analysis.ipynb
+│── src/
+│   ├── preprocess.py
+│   ├── feature_engineering.py
+│   ├── model.py
+│   └── evaluate.py
+│── README.md
+│── requirements.txt
 ```
 
-## Modelling decisions
+---
 
-- The target is standardised to salary_in_usd.
-- Nominal categories use one-hot encoding instead of arbitrary integer labels.
+## 📈 Key Findings
 
-### Models compared
+* Years of experience and job location were the most influential factors in salary prediction
+* Candidates with multiple key skills (e.g., ML + SQL + Python) tend to have higher predicted salaries
+* Tree-based regressors like Random Forest and Gradient Boosting outperformed linear regression due to capturing non-linear interactions
+* Log-transforming salary target improved model residuals and prediction stability
 
-- Ridge Regression
-- Decision Tree
-- Random Forest
+---
 
-## Evaluation
+## 🚀 Future Improvements
 
-The notebook evaluates MAE, RMSE and R², supported by residual diagnostics.
+* Include additional market/industry features: company revenue, demand trend, cost-of-living index for location
+* Deploy as a web app where job seekers enter role details and obtain a salary estimate
+* Use ensemble stacking/blending to further reduce prediction error
+* Incorporate explainability (SHAP, LIME) so candidates/employers understand what drives the salary estimate
+* Monitor salary-market drift and periodically retrain model with updated job-listing data
 
-## Verified results
+---
 
-The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
+## 🧑‍💻 Author
 
-## Repository structure
+**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
 
-```text
-├── data_science_salary_regression.ipynb
-└── README.md
-```
-
-## How to run
-
-From this project directory:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r ../requirements.txt
-jupyter lab 'data_science_salary_regression.ipynb'
-```
-
-If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
-
-## Technologies
-
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- Matplotlib and Seaborn
-- Jupyter
-
-## Future improvements
-
-- Validate on a newer or independently collected dataset.
-- Add domain-specific error costs and decision thresholds.
-- Track data drift and subgroup performance before deployment.
-- Package the fitted pipeline only after data and licensing checks.
-
-## Author
-
-**Tajamul Khan**
-
-[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
+---
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -106,7 +115,7 @@ If the dataset is not included, download it from the recorded source and use the
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
+<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

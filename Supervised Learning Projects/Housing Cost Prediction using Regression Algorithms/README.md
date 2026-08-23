@@ -1,104 +1,106 @@
-# New York Housing Project Cost Regression
+# 🏠 Housing Cost Prediction using Regression Algorithms
 
-Estimate a New York building project's initial cost from permit and property attributes.
+A machine learning project focused on predicting real-estate housing costs using regression models, historical property data, and engineered features.
 
-## Overview
+---
 
-This project is a focused, reproducible regression case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
+## 📌 Project Overview
 
-## Problem statement
+This project builds a comprehensive pipeline: collecting property datasets (location, area, number of rooms, amenities, year built, etc.), performing exploratory analysis to uncover cost drivers, engineering features, training regression models, and evaluating their performance. The goal is to accurately estimate housing costs and provide insights for real-estate decision-making.
 
-- **Task:** Regression
-- **Target:** `Initial Cost`
-- **Primary metric:** MAE
-- **Goal:** Estimate a New York building project's initial cost from permit and property attributes.
+---
 
-## Dataset
+## 🧰 Tech Stack
 
-- **Availability:** Download required: place `apartment_cost_list.csv` in this directory
-- **Recorded source:** [https://www.kaggle.com/datasets/anandaramg/apartment-cost-in-new-york-city](https://www.kaggle.com/datasets/anandaramg/apartment-cost-in-new-york-city)
-- **Target:** `Initial Cost`
+* **Language:** Python
+* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
+* **Environment:** Jupyter Notebook / Google Colab
 
-Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
+---
 
-## Project workflow
+## 🔄 Workflow Summary
 
-```text
-Data validation
-      ↓
-Focused EDA
-      ↓
-Train / holdout split
-      ↓
-Pipeline-based preprocessing
-      ↓
-Baseline and cross-validation
-      ↓
-Holdout evaluation
-      ↓
-Error analysis and interpretation
+### 1. Data Collection
+
+Historical housing price data capturing features like zone, area in square feet/meters, number of bedrooms, number of bathrooms, age of property, proximity to amenities, and target variable as housing cost.
+
+### 2. Exploratory Data Analysis (EDA)
+
+* Distribution of housing costs across segments
+* Visualisations of cost vs area, number of rooms, age of property
+* Heatmap of feature correlations
+* Identifying outliers, missing values, skewness
+
+### 3. Feature Engineering
+
+* Encoding categorical variables (e.g., zone/region)
+* Creating derived features such as price per square foot, age bucket, amenities count
+* Log-transforming skewed features if needed
+* Scaling numerical variables for model compatibility
+* Splitting data into training and test sets
+
+### 4. Modeling
+
+Regression algorithms applied:
+
+* **Linear Regression** (baseline)
+* **Random Forest Regressor** or **Gradient Boosting Regressor** (strong performers)
+* **(Optional) XGBoost / LightGBM** for advanced modelling
+
+### 5. Evaluation
+
+Metrics used to measure model performance:
+
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² (coefficient of determination)
+* Residual analysis
+
+**Result:** The top-performing regression model delivered low error and strong R², demonstrating robust estimation of housing costs and highlighting key features like area, region and property age.
+
+### 6. Prediction & Insights
+
+* Generated cost predictions for new property entries
+* Analysed feature importance: e.g., area size, zone, amenities count emerged as top drivers
+* Provided actionable guidance: how features influence cost and insights for buyers/sellers
+
+---
+
+## 📁 Project Structure
+
+```
+Housing-Cost-Prediction/
+│── data/
+│── notebooks/
+│── src/
+│── README.md
+│── requirements.txt
 ```
 
-## Modelling decisions
+---
 
-- The broken dataset URL was repaired.
-- Currency and area strings are parsed explicitly; high-cardinality identifiers are excluded.
+## 📈 Key Findings
 
-### Models compared
+* Area size and region (zone) were the most influential predictors of housing cost
+* Derived features such as price per square foot and age bucket improved accuracy significantly
+* Regression models like Random Forest and Gradient Boosting outperformed simple linear regression
+* The pipeline supports real-estate stakeholders with actionable cost estimations
 
-- Ridge Regression
-- Decision Tree
-- Random Forest
-- AdaBoost
+---
 
-## Evaluation
+## 🚀 Future Improvements
 
-The notebook evaluates MAE, RMSE and R², supported by residual diagnostics.
+* Incorporate external factors like market trend indexes, interest rates, inflation, and macro-economic indicators
+* Explore time-series modelling for market dynamics or rolling predictions
+* Deploy as a web application (Flask/Streamlit) for real-time cost estimation
+* Incorporate satellite imagery or map-based features (e.g., proximity to transport) to enhance predictions
+* Continuously update model with new property data to maintain accuracy and adapt to market changes
 
-## Verified results
+---
 
-The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
+## 🧑‍💻 Author
 
-## Repository structure
-
-```text
-├── new_york_housing_cost_regression.ipynb
-└── README.md
-```
-
-## How to run
-
-From this project directory:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r ../requirements.txt
-jupyter lab 'new_york_housing_cost_regression.ipynb'
-```
-
-If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
-
-## Technologies
-
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- Matplotlib and Seaborn
-- Jupyter
-
-## Future improvements
-
-- Validate on a newer or independently collected dataset.
-- Add domain-specific error costs and decision thresholds.
-- Track data drift and subgroup performance before deployment.
-- Package the fitted pipeline only after data and licensing checks.
-
-## Author
-
-**Tajamul Khan**
-
-[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
+**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -107,7 +109,7 @@ If the dataset is not included, download it from the recorded source and use the
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
+<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

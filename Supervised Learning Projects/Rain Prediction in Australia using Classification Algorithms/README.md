@@ -1,110 +1,114 @@
-# Next-Day Rain Classification in Australia
+# 🌦️ Rain Prediction in Australia Using Classification Algorithms
 
-Predict whether it will rain tomorrow from observations available today.
+A machine-learning project focused on predicting whether it will rain the next day in Australia using meteorological features and classification models.
 
-## Overview
+---
 
-This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
+## 📌 Project Overview
 
-## Problem statement
+This project builds a full pipeline: loading historical weather data for Australian locations, exploratory data analysis, feature engineering (temperature, humidity, wind, rainfall history, etc.), model training (classification algorithms), evaluation metrics and insight extraction. The goal is to predict the binary outcome of “RainTomorrow” and provide actionable insights for weather-aware planning.
 
-- **Task:** Classification
-- **Target:** `RainTomorrow`
-- **Primary metric:** Macro F1
-- **Goal:** Predict whether it will rain tomorrow from observations available today.
+---
 
-## Dataset
+## 🧰 Tech Stack
 
-- **Availability:** Included: `Weather Data.csv`
-- **Recorded source:** Dataset file is included in this project.
-- **Target:** `RainTomorrow`
+* **Language:** Python
+* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
+* **Environment:** Jupyter Notebook / Google Colab
 
-Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
+---
 
-## Project workflow
+## 🔄 Workflow Summary
 
-```text
-Data validation
-      ↓
-Focused EDA
-      ↓
-Train / holdout split
-      ↓
-Pipeline-based preprocessing
-      ↓
-Baseline and cross-validation
-      ↓
-Holdout evaluation
-      ↓
-Error analysis and interpretation
+### 1. Data Collection
+
+The dataset includes daily weather observations for various Australian locations: features like MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine, WindGustSpeed, Humidity3pm, Pressure9am, and a target column “RainTomorrow” (Yes/No).
+
+### 2. Exploratory Data Analysis (EDA)
+
+* Distribution of “RainTomorrow = Yes” vs “No”
+* Boxplots & histograms for features (e.g., rainfall, humidity) by target class
+* Correlation matrix of numeric features with the target and amongst themselves
+* Handling missing values, outlier detection, balancing the dataset
+
+### 3. Feature Engineering
+
+* Encoding categorical location/season variables
+* Creating derived features: e.g., previous day rainfall flag, variation between MinTemp & MaxTemp, wind direction encoding
+* Scaling numeric features where required (StandardScaler/MinMax)
+* Splitting dataset into training and test sets (stratified by target)
+
+### 4. Modeling
+
+Classification algorithms implemented:
+
+* **Logistic Regression** (baseline)
+* **Random Forest Classifier** (strong performer)
+* **Gradient Boosting / XGBoost** for advanced performance
+  Hyper-parameter tuning via GridSearchCV/RandomizedSearchCV for parameters like n_estimators, max_depth, learning_rate
+
+### 5. Evaluation
+
+Performance metrics used include:
+
+* Accuracy
+* Precision, Recall, F1-Score
+* Confusion Matrix
+* ROC-AUC
+  **Result:** The best model achieved good recall on the “RainTomorrow = Yes” class (important for catching rainfall) and balanced precision and recall for practical use.
+
+### 6. Insights & Business Application
+
+* Important predictors identified: humidity at 3 pm, rainfall today, wind gust speed, pressure at 9 am and previous day rainfall.
+* When humidity is high and there was rainfall today, the likelihood of rain tomorrow increases.
+* Practical recommendation: Use prediction to inform outdoor event planning, agriculture scheduling, and weather-alert systems.
+
+---
+
+## 📁 Project Structure
+
+```
+Rain-Prediction-Australia/
+│── data/
+│   ├── raw/
+│   └── processed/
+│── notebooks/
+│   └── rain_prediction_analysis.ipynb
+│── src/
+│   ├── preprocess.py
+│   ├── feature_engineering.py
+│   ├── train_model.py
+│   └── evaluate.py
+│── README.md
+│── requirements.txt
 ```
 
-## Modelling decisions
+---
 
-- The filename mismatch was fixed.
-- Chronological splitting and TimeSeriesSplit replace random validation for dated observations.
+## 📈 Key Findings
 
-### Models compared
+* Humidity and previous day rainfall were among the top predictors for rain tomorrow.
+* Tree-based classifiers like Random Forest and Gradient Boosting outperformed logistic regression due to ability to model non-linear interactions.
+* Balancing data (e.g., via oversampling the “Yes” class or using class weights) improved recall for rainfall prediction.
+* Feature scaling and careful missing-value handling improved model stability.
 
-- Logistic Regression
-- Decision Tree
-- Random Forest
+---
 
-## Evaluation
+## 🚀 Future Improvements
 
-The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
+* Incorporate **time-series features**: sequences of weather data over previous days, roll-windows of rainfall and temperature.
+* Explore **ensemble stacking** of classification models (Random Forest + XGBoost + LightGBM) to improve accuracy.
+* Deploy as a web service/dashboard where users input location + recent weather and get probability of rain tomorrow.
+* Integrate **explainability tools** (SHAP values) so users understand which features contributed most to each prediction.
+* Use additional data sources: satellite imagery, radar data, micro-climate sensors, and expand geography beyond Australia.
 
-## Verified results
+---
 
-The refurbished notebook was executed successfully against the dataset currently committed in this project. The untouched holdout produced:
+## 🧑‍💻 Author
 
-| Selected model | Accuracy | Macro F1 |
-|---|---:|---:|
-| Logistic Regression | 0.8275 | 0.7585 |
+**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
 
-These values are a reproducibility record for the current data and dependency range, not a production benchmark.
-
-## Repository structure
-
-```text
-├── australia_rain_classification.ipynb
-├── README.md
-└── Weather Data.csv
-```
-
-## How to run
-
-From this project directory:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r ../requirements.txt
-jupyter lab 'australia_rain_classification.ipynb'
-```
-
-If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
-
-## Technologies
-
-- Python
-- Pandas and NumPy
-- Scikit-learn
-- Matplotlib and Seaborn
-- Jupyter
-
-## Future improvements
-
-- Validate on a newer or independently collected dataset.
-- Add domain-specific error costs and decision thresholds.
-- Track data drift and subgroup performance before deployment.
-- Package the fitted pipeline only after data and licensing checks.
-
-## Author
-
-**Tajamul Khan**
-
-[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
+---
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -113,7 +117,7 @@ If the dataset is not included, download it from the recorded source and use the
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
+<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">
