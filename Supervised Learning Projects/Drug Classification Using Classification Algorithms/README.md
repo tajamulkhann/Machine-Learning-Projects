@@ -1,103 +1,103 @@
-# 💊 Drug Classification Using Classification Algorithms
+# Drug Type Classification
 
-A machine learning project focused on classifying drug categories based on patient clinical profiles and features, leveraging classification models to support decision-making.
+Predict the prescribed drug category from age, sex, blood pressure, cholesterol and sodium-to-potassium ratio.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project builds a full pipeline: ingest patient data including vitals, demographics and other clinical indicators; conduct exploratory analysis to understand patterns; create informative features; train classification models to predict drug category; and evaluate model performance. The goal is to accurately classify the appropriate drug type and extract insights driving classification decisions.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `Drug`
+- **Primary metric:** Macro F1
+- **Goal:** Predict the prescribed drug category from age, sex, blood pressure, cholesterol and sodium-to-potassium ratio.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Download required: place `drug200.csv` in this directory
+- **Recorded source:** The original project stored a shortened dataset link; download drug200.csv and place it beside the notebook.
+- **Target:** `Drug`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset capturing patient features such as age, sex, blood pressure levels, cholesterol levels, and other clinical measures plus the target drug category for each patient.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of drug categories across samples
-* Feature distributions and comparisons between classes
-* Correlation heatmap among clinical variables
-* Identification of missing values, class imbalance and outliers
-
-### 3. Feature Engineering
-
-* Encoding categorical variables (e.g., sex, drug category)
-* Creating derived features such as BP ratio, cholesterol threshold bins
-* Scaling numerical features (standardization/normalization)
-* Splitting into training and test sets with stratified sampling
-
-### 4. Modeling
-
-Classification algorithms implemented:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **(Optional) Gradient Boosting / XGBoost** for improved accuracy
-
-### 5. Evaluation
-
-Key metrics used to assess model performance:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC-AUC
-
-**Result:** The best‐performing classifier achieved high accuracy in drug category prediction, demonstrating the effectiveness of patient clinical features for classification.
-
-### 6. Prediction & Insights
-
-* Generated predictions for unseen patient profiles
-* Analysed feature importance to identify key clinical indicators influencing drug classification (e.g., BP levels, cholesterol)
-* Provided business/clinical insights: how features influence drug recommendation and classification
-
----
-
-## 📁 Project Structure
-
-```
-Drug-Classification/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- Multiclass macro F1 gives each drug class equal importance.
+- Categorical values are one-hot encoded inside validation folds.
 
-* Certain clinical indicators (e.g., elevated blood pressure, cholesterol level) emerged as strong predictors of particular drug categories
-* Feature engineering (derived features & scaling) significantly improved classification performance
-* The classification pipeline provided reliable predictions, enabling decision-making support for drug classification tasks
+### Models compared
 
----
+- Logistic Regression
+- Random Forest
+- AdaBoost
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Expand dataset with more diverse patient populations and drug categories
-* Incorporate advanced models such as ensemble stacking or deep learning based classifiers
-* Deploy a web app (Flask/Streamlit) for clinicians to input patient profile and receive drug category prediction
-* Integrate explainability tools (e.g., SHAP or LIME) to interpret model predictions and support clinical reasoning
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Repository structure
+
+```text
+├── drug_classification.ipynb
+└── README.md
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'drug_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -106,7 +106,7 @@ Drug-Classification/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

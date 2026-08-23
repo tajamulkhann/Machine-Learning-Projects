@@ -1,1 +1,0 @@
-https://www.kaggle.com/datasets/arnabchaki/laptop-price-prediction?select=laptops_train.csv

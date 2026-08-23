@@ -1,115 +1,104 @@
-# 🧬 Stroke Prediction using Machine Learning Classification Algorithm
+# Stroke Risk Classification
 
-A machine-learning project focused on predicting the likelihood of a stroke using classification models and patient demographic, lifestyle, and medical data.
+Classify stroke outcome from demographic, clinical and lifestyle features.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project builds an end-to-end pipeline: loading patient data (age, gender, hypertension, heart disease, smoking status, BMI, etc.), performing exploratory analysis, engineering features, training classification models (e.g., Logistic Regression, Random Forest, XGBoost), evaluating their performance, and deriving actionable insights for health interventions. The goal is to classify patients into high vs low risk of stroke and support early preventive care.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `stroke`
+- **Primary metric:** Macro F1
+- **Goal:** Classify stroke outcome from demographic, clinical and lifestyle features.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Download required: place `healthcare-dataset-stroke-data.csv` in this directory
+- **Recorded source:** [https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+- **Target:** `stroke`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset includes features such as: age, gender, hypertension, heart disease, ever married, work type, residence type, average glucose level, BMI, smoking status, and target variable “stroke” (0/1 or yes/no).
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of stroke vs non-stroke patients by age, BMI, glucose level
-* Boxplots and histograms for key features grouped by target
-* Correlation matrix among numeric features and relation to stroke
-* Check missing values, class imbalance (strokes are rarer)
-
-### 3. Feature Engineering
-
-* Encode categorical features (gender, work type, smoking status) via one-hot encoding or label encoding
-* Create derived features such as BMI category, glucose level buckets, combined risk score (e.g., hypertension + heart disease)
-* Scale numeric features if required
-* Handle class imbalance via oversampling, undersampling, or class weights
-* Split data into training and test sets (e.g., 80/20) with stratification
-
-### 4. Modeling
-
-Classification algorithms used:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **XGBoost / LightGBM** for advanced performance
-  Hyper-parameter tuning via GridSearchCV/RandomizedSearchCV (e.g., n_estimators, max_depth, learning_rate)
-
-### 5. Evaluation
-
-Metrics used:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC-AUC
-  **Result:** The best model achieved high recall and acceptable precision, enabling identification of patients at risk of stroke for early intervention.
-
-### 6. Insights & Application
-
-* Key risk-factors: age, average glucose level, BMI, hypertension, heart disease emerged as strong predictors
-* Practical recommendations: healthcare providers may prioritise screening for patients with elevated glucose, higher BMI, and combined hypertension + heart-disease history
-* Model supports early risk stratification and targeted patient monitoring
-
----
-
-## 📁 Project Structure
-
-```
-Stroke-Prediction-ML-Classification/
-│── data/
-│   ├── raw/
-│   └── processed/
-│── notebooks/
-│   └── stroke_prediction_analysis.ipynb
-│── src/
-│   ├── preprocess.py
-│   ├── feature_engineering.py
-│   ├── model.py
-│   └── evaluate.py
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- Class imbalance is handled with model weights, never by resampling the holdout set.
+- Precision-recall and false-negative behaviour are included in evaluation.
 
-* Patients with hypertension and heart disease together had markedly higher predicted risk of stroke.
-* Deriving combined risk features (e.g., hypertension + heart-disease flag) improved model discrimination.
-* Tree-based classifiers like Random Forest and XGBoost outperformed Logistic Regression due to capturing complex interactions.
-* Managing class imbalance (e.g., via SMOTE or class weighting) was critical to achieve strong recall for the minority ‘stroke’ class.
+### Models compared
 
----
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- AdaBoost
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Incorporate longitudinal data (e.g., yearly health records, lifestyle change logs) to improve prediction of future strokes.
-* Deploy as a clinical web/app interface where patient data can be input and risk score returned in real time.
-* Include interpretability/explainability (e.g., SHAP values) so clinicians understand which factors drove the prediction.
-* Monitor model performance over time in production, adjust for population shift or new risk-factors.
-* Link to intervention module: when high risk flagged, automatic referral to specialist, lifestyle recommendation or alert system.
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Repository structure
 
----
+```text
+├── stroke_risk_classification.ipynb
+└── README.md
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'stroke_risk_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -118,7 +107,7 @@ Stroke-Prediction-ML-Classification/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

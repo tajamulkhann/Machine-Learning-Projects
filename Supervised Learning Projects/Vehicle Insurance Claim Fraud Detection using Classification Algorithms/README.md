@@ -1,119 +1,103 @@
-# 🚗 Vehicle Insurance Claim Fraud Detection using Classification Algorithms
+# Vehicle Insurance Claim Fraud Classification
 
-A machine-learning project focused on detecting potentially fraudulent vehicle insurance claims using classification models, feature engineering and analytical insights.
+Classify potentially fraudulent vehicle-insurance claims from policy, claimant, vehicle and incident attributes.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project develops a full workflow: collecting insurance claims data (claim amount, claimant demographics, vehicle details, previous claims, police report data etc.), performing exploratory analysis, engineering features, training classification models to detect fraud, evaluating performance, and deriving business-actionable insights. The goal is to build a system to flag high-risk claims for further investigation and reduce fraud losses.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `FraudFound_P`
+- **Primary metric:** Macro F1
+- **Goal:** Classify potentially fraudulent vehicle-insurance claims from policy, claimant, vehicle and incident attributes.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Download required: place `fraud_oracle.csv` in this directory
+- **Recorded source:** [https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection](https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection)
+- **Target:** `FraudFound_P`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset includes features such as: claim amount, claim type, vehicle age, driver age, number of previous claims, police report filed (yes/no), witness statements, days until claim reported, region, and target variable indicating whether the claim was flagged as fraudulent.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of fraudulent vs non-fraudulent claims by features (claim amount, driver age, vehicle age)
-* Visualisations: boxplots, histograms, and heatmap of feature correlations
-* Check for class imbalance (fraud cases often are much fewer)
-* Outlier detection for unusually high claim amounts
-
-### 3. Feature Engineering
-
-* Encode categorical variables (claim type, region, vehicle type) via one-hot or label encoding
-* Create derived features such as:
-
-  * claim_amount / vehicle_age
-  * days_until_reporting flag (early vs late)
-  * previous_claims_count per driver
-  * witness_count or police_report_flag as binary feature
-* Scale numerical features where required
-* Split into training/test sets (often stratified by fraud label) and possibly oversample fraud cases (SMOTE) or apply class weights
-
-### 4. Modeling
-
-Classification algorithms used include:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **Gradient Boosting (XGBoost/LightGBM)** for improved performance
-* Hyper-parameter tuning (e.g., max_depth, n_estimators, learning_rate) via cross-validation
-
-### 5. Evaluation
-
-Metrics for fraud detection:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix (particularly focus on false negatives: missed frauds)
-* ROC-AUC
-  **Result:** The best model achieved high recall and acceptable precision, helping catch fraud cases while limiting false alarms.
-
-### 6. Insights & Business Application
-
-* Key fraud indicators identified: unusually high claim amounts, late reporting, vehicle older than threshold, multiple prior claims, missing witness statements.
-* Operational recommendations: flag claims with high risk score for manual investigation; deploy automated alerts; prioritise resources for drivers with previous claims or late-reporting behaviour.
-* Model helps reduce investigation workload by focusing on high-probability fraudulent claims.
-
----
-
-## 📁 Project Structure
-
-```
-Vehicle-Insurance-Claim-Fraud-Detection/
-│── data/
-│   ├── raw/
-│   └── processed/
-│── notebooks/
-│   └── fraud_detection_analysis.ipynb
-│── src/
-│   ├── preprocess.py
-│   ├── feature_engineering.py
-│   ├── model.py
-│   └── evaluate.py
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- The holdout set is never resampled.
+- Precision-recall analysis is prioritised because fraud is the minority class.
 
-* Late claim reporting and high claim amount relative to vehicle age were among the most influential predictors of fraud.
-* Tree-based models (Random Forest, Gradient Boosting) outperformed logistic regression by capturing non-linear interactions and complex fraud patterns.
-* Handling class imbalance via oversampling or class weights significantly improved recall of the fraud class.
-* Feature importance analysis revealed that driver’s prior claim history and police report flag had strong predictive power.
+### Models compared
 
----
+- Logistic Regression
+- Decision Tree
+- Random Forest
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Incorporate additional features like vehicle usage telemetry, driver behaviour data (telematics), damage image analysis for richer fraud detection.
-* Expand to multi-modal data: images of damage, videos of incident, voice calls transcripts—use deep-learning for cross-modal fraud analysis.
-* Deploy model via a dashboard or API for claims team: real-time score, explanation (SHAP values), investigation workflow integration.
-* Use ensemble stacking (e.g., blend Random Forest + XGBoost + Neural Network) to improve detection performance.
-* Monitor model drift over time as fraud tactics evolve; retrain and update features periodically.
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Repository structure
 
----
+```text
+├── vehicle_claim_fraud_classification.ipynb
+└── README.md
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'vehicle_claim_fraud_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -122,7 +106,7 @@ Vehicle-Insurance-Claim-Fraud-Detection/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">
