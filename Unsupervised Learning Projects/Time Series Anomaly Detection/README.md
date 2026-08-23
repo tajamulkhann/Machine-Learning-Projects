@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Time Series Anomaly Detection
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Find spikes, drops and level shifts in a seasonal signal without supervised training.
 
 ## Overview
 
@@ -10,15 +10,15 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 
 ## Problem statement
 
-- **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+- **Category:** Anomaly detection
+- **Goal:** Find spikes, drops and level shifts in a seasonal signal without supervised training.
 - **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Primary evaluation:** ROC-AUC, average precision, precision at k and event coverage
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Deterministic seasonal time series with hidden anomalies for evaluation only.
+- **Reference/source:** Replace with a timestamped operational metric.
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,13 +35,14 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- Rolling residual features
+- robust z-scores and Isolation Forest
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- ROC-AUC
+- average precision
+- precision at k and event coverage
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
@@ -55,7 +56,7 @@ Replace demonstration data only with licensed, privacy-safe data matching the do
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── time_series_anomaly_detection.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +68,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "time_series_anomaly_detection.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

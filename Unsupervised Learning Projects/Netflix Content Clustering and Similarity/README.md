@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Netflix Content Clustering and Similarity
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Cluster streaming titles and retrieve similar content from metadata and descriptions.
 
 ## Overview
 
@@ -11,14 +11,14 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 ## Problem statement
 
 - **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+- **Goal:** Cluster streaming titles and retrieve similar content from metadata and descriptions.
 - **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Primary evaluation:** Silhouette, neighbour relevance and cluster profile inspection
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Deterministic Netflix-style catalogue covering five content themes.
+- **Reference/source:** https://www.kaggle.com/datasets/shivamb/netflix-shows
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,13 +35,14 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- TF-IDF
+- K-Means
+- nearest neighbours and metadata-aware similarity
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- Silhouette
+- neighbour relevance and cluster profile inspection
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
@@ -55,7 +56,7 @@ Replace demonstration data only with licensed, privacy-safe data matching the do
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── netflix_content_clustering.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +68,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "netflix_content_clustering.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

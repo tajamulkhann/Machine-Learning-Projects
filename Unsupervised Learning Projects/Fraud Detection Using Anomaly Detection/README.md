@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Fraud Detection Using Anomaly Detection
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Rank suspicious transactions without using fraud labels during model fitting.
 
 ## Overview
 
@@ -10,15 +10,15 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 
 ## Problem statement
 
-- **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+- **Category:** Anomaly detection
+- **Goal:** Rank suspicious transactions without using fraud labels during model fitting.
 - **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Primary evaluation:** ROC-AUC, average precision, precision at k and alert-rate analysis
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Deterministic transaction demonstration data with hidden labels used only for evaluation.
+- **Reference/source:** https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,13 +35,14 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- Isolation Forest
+- Local Outlier Factor and anomaly-score diagnostics
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- ROC-AUC
+- average precision
+- precision at k and alert-rate analysis
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
@@ -55,7 +56,7 @@ Replace demonstration data only with licensed, privacy-safe data matching the do
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── fraud_anomaly_detection.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +68,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "fraud_anomaly_detection.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

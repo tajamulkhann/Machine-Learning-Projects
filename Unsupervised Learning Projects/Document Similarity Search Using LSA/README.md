@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Document Similarity Search Using LSA
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Build a lightweight semantic search engine over technical documents.
 
 ## Overview
 
@@ -10,15 +10,15 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 
 ## Problem statement
 
-- **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+- **Category:** NLP similarity
+- **Goal:** Build a lightweight semantic search engine over technical documents.
 - **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Primary evaluation:** Explained variance, score separation and retrieval sanity checks
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Curated technical document snippets covering data, cloud and machine learning.
+- **Reference/source:** Replace with an owned document collection for production use.
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,13 +35,14 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- TF-IDF
+- truncated SVD
+- vector normalisation and nearest-neighbour retrieval
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- Explained variance
+- score separation and retrieval sanity checks
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
@@ -55,7 +56,7 @@ Replace demonstration data only with licensed, privacy-safe data matching the do
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── document_similarity_search_lsa.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +68,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "document_similarity_search_lsa.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

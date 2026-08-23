@@ -7,7 +7,7 @@ A practical machine learning portfolio by **Tajamul Khan**, organised around rep
 | Category | Projects | What you will find |
 |---|---:|---|
 | [Supervised Learning](Supervised%20Learning%20Projects/) | 29 | Classification, regression, NLP, time-aware evaluation and interpretable pipelines |
-| [Unsupervised Learning](Unsupervised%20Learning%20Projects/) | 5 | Clustering, recommendation and pattern-discovery projects |
+| [Unsupervised Learning](Unsupervised%20Learning%20Projects/) | 21 | Clustering, recommendation and pattern-discovery projects |
 
 ## Portfolio standards
 

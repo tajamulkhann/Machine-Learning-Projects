@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Movie Recommendation System
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Build an item-to-item collaborative-filtering recommender from explicit movie ratings.
 
 ## Overview
 
@@ -11,14 +11,14 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 ## Problem statement
 
 - **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
-- **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Goal:** Build an item-to-item collaborative-filtering recommender from explicit movie ratings.
+- **Data mode:** Committed dataset
+- **Primary evaluation:** Neighbour similarity, catalogue coverage and recommendation sanity checks
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** MovieLens-style ratings and movie-title tables committed with the project.
+- **Reference/source:** https://grouplens.org/datasets/movielens/
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,27 +35,29 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- User-item filtering
+- cosine similarity and popularity-aware candidate filtering
 
 ## Evaluation
 
 - Neighbour similarity
-- coverage and recommendation diversity
+- catalogue coverage and recommendation sanity checks
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
 
 ## Verified results
 
-The canonical notebook has been verified end to end in **verified demo mode**.
+The canonical notebook has been verified end to end in **committed dataset**.
 Results are generated at execution time and intentionally not hard-coded into this README.
 Replace demonstration data only with licensed, privacy-safe data matching the documented schema.
 
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── movie_recommendation_system.ipynb
+├── movie_titles.csv
+├── ratings.tsv
 └── README.md
 ~~~
 
@@ -67,7 +69,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "movie_recommendation_system.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

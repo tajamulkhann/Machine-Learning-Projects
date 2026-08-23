@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Cryptocurrency Market Regime Detection
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Identify calm, trending and stressed crypto regimes from rolling market behaviour.
 
 ## Overview
 
@@ -10,15 +10,15 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 
 ## Problem statement
 
-- **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+- **Category:** Financial clustering
+- **Goal:** Identify calm, trending and stressed crypto regimes from rolling market behaviour.
 - **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Primary evaluation:** Silhouette, stability, adjusted Rand index and transition analysis
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Deterministic synthetic daily crypto market with hidden regimes for evaluation only.
+- **Reference/source:** Replace with licensed OHLCV market data.
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,13 +35,15 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- Rolling feature engineering
+- scaling
+- K-Means and chronological regime profiles
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- Silhouette
+- stability
+- adjusted Rand index and transition analysis
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
@@ -55,7 +57,7 @@ Replace demonstration data only with licensed, privacy-safe data matching the do
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── cryptocurrency_market_regimes.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +69,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "cryptocurrency_market_regimes.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

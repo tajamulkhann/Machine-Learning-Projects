@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# PCA and Manifold Learning Visual Lab
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Compare linear and nonlinear low-dimensional views of high-dimensional observations.
 
 ## Overview
 
@@ -10,15 +10,15 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 
 ## Problem statement
 
-- **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
-- **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Category:** Dimensionality reduction
+- **Goal:** Compare linear and nonlinear low-dimensional views of high-dimensional observations.
+- **Data mode:** Built-in dataset
+- **Primary evaluation:** Explained variance, trustworthiness and downstream clustering quality
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Scikit-learn handwritten digits dataset.
+- **Reference/source:** https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,27 +35,28 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- Standardisation
+- PCA
+- t-SNE and neighbourhood visualisation
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- Explained variance
+- trustworthiness and downstream clustering quality
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
 
 ## Verified results
 
-The canonical notebook has been verified end to end in **verified demo mode**.
+The canonical notebook has been verified end to end in **built-in dataset**.
 Results are generated at execution time and intentionally not hard-coded into this README.
 Replace demonstration data only with licensed, privacy-safe data matching the documented schema.
 
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── pca_manifold_learning_lab.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +68,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "pca_manifold_learning_lab.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

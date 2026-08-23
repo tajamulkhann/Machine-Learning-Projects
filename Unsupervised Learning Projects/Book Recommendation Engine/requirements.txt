@@ -1,5 +1,0 @@
-streamlit
-numpy
-scikit-learn
-
--e.

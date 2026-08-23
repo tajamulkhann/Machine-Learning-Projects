@@ -1,6 +1,6 @@
-# Book Recommendation Engine
+# Customer Review Topic Modeling
 
-Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+Turn unstructured customer feedback into interpretable product and service themes.
 
 ## Overview
 
@@ -10,15 +10,15 @@ and responsible-use notes. The notebook is designed to run from top to bottom.
 
 ## Problem statement
 
-- **Category:** Recommendation
-- **Goal:** Create a collaborative-filtering engine that recommends books from reader-rating behaviour.
+- **Category:** NLP and topic modelling
+- **Goal:** Turn unstructured customer feedback into interpretable product and service themes.
 - **Data mode:** Verified demo mode
-- **Primary evaluation:** Neighbour similarity, coverage and recommendation diversity
+- **Primary evaluation:** Reconstruction error, topic diversity and topic prevalence
 
 ## Dataset
 
-- **Dataset:** Deterministic demonstration ratings; schema supports the Book-Crossing dataset.
-- **Reference/source:** https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+- **Dataset:** Deterministic review corpus covering delivery, quality, pricing, support and usability.
+- **Reference/source:** https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews
 - **Reproducibility:** The default notebook path is deterministic and uses a fixed seed.
 
 Demonstration labels, where present, are hidden from fitting and used only after modelling
@@ -35,13 +35,13 @@ to audit whether the unsupervised output recovered meaningful structure.
 
 ## Methodology
 
-- Interaction filtering
-- item cosine similarity and popularity-aware recommendations
+- TF-IDF
+- NMF topic extraction and topic-level review inspection
 
 ## Evaluation
 
-- Neighbour similarity
-- coverage and recommendation diversity
+- Reconstruction error
+- topic diversity and topic prevalence
 
 Unsupervised metrics are read together rather than reduced to a single accuracy claim.
 When hidden labels exist in demonstration data, they never influence model fitting.
@@ -55,7 +55,7 @@ Replace demonstration data only with licensed, privacy-safe data matching the do
 ## Repository structure
 
 ~~~text
-├── book_recommendation_engine.ipynb
+├── customer_review_topic_modeling.ipynb
 └── README.md
 ~~~
 
@@ -67,7 +67,7 @@ From this project directory:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r ../requirements.txt
-jupyter lab "book_recommendation_engine.ipynb"
+jupyter lab "customer_review_topic_modeling.ipynb"
 ~~~
 
 On Windows, activate the environment with <code>.venv\Scripts\activate</code>.

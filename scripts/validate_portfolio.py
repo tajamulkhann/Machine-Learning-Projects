@@ -13,7 +13,9 @@ from urllib.parse import unquote
 
 REPO = Path(__file__).resolve().parents[1]
 SUPERVISED = REPO / "Supervised Learning Projects"
-EXPECTED_PROJECTS = 29
+UNSUPERVISED = REPO / "Unsupervised Learning Projects"
+EXPECTED_SUPERVISED_PROJECTS = 29
+EXPECTED_UNSUPERVISED_PROJECTS = 21
 
 HANDSHAKE_IMAGE_URL = "https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif"
 LOCKED_CONNECT_BLOCK = f'''## Let's Connect <img src="{HANDSHAKE_IMAGE_URL}" height="30px" style="max-width:100%;">
@@ -157,26 +159,28 @@ def validate_markdown_links(path: Path, issues: list[str]) -> None:
             fail(issues, f"{path.relative_to(REPO)}: broken local link {raw_target}")
 
 
-def validate_index_links(issues: list[str]) -> None:
-    index = (SUPERVISED / "README.md").read_text(encoding="utf-8")
+def validate_index_links(collection: Path, issues: list[str]) -> None:
+    index = (collection / "README.md").read_text(encoding="utf-8")
     links = re.findall(r"\[[^]]+\]\(([^)]+/)\)", index)
     for link in links:
         if link.startswith(("http://", "https://")):
             continue
-        target = SUPERVISED / unquote(link.rstrip("/"))
+        target = collection / unquote(link.rstrip("/"))
         if not target.is_dir():
-            fail(issues, f"Supervised Learning Projects/README.md: broken directory link {link}")
+            fail(issues, f"{collection.name}/README.md: broken directory link {link}")
 
 
-def main() -> int:
-    issues: list[str] = []
-    if not SUPERVISED.is_dir():
-        print("Supervised Learning Projects directory is missing", file=sys.stderr)
-        return 1
+def validate_collection(collection: Path, expected_projects: int, issues: list[str]) -> list[Path]:
+    if not collection.is_dir():
+        fail(issues, f"{collection.name} directory is missing")
+        return []
 
-    projects = sorted(path for path in SUPERVISED.iterdir() if path.is_dir())
-    if len(projects) != EXPECTED_PROJECTS:
-        fail(issues, f"Expected {EXPECTED_PROJECTS} project directories; found {len(projects)}")
+    projects = sorted(path for path in collection.iterdir() if path.is_dir())
+    if len(projects) != expected_projects:
+        fail(
+            issues,
+            f"{collection.name}: expected {expected_projects} project directories; found {len(projects)}",
+        )
 
     for project in projects:
         notebooks = list(project.glob("*.ipynb"))
@@ -192,19 +196,27 @@ def main() -> int:
             validate_markdown_links(readme, issues)
 
     obsolete = []
-    for path in SUPERVISED.rglob("*"):
+    for path in collection.rglob("*"):
         if path.is_file() and (
             path.name in {".DS_Store", ".gitignore"}
             or path.suffix.lower() in {".pdf"}
             or "rough" in path.name.lower()
+            or ".ipynb_checkpoints" in path.parts
         ):
             obsolete.append(str(path.relative_to(REPO)))
     if obsolete:
-        fail(issues, f"Obsolete generated or temporary files remain: {obsolete}")
+        fail(issues, f"{collection.name}: obsolete generated or temporary files remain: {obsolete}")
 
-    validate_index_links(issues)
+    validate_index_links(collection, issues)
+    validate_markdown_links(collection / "README.md", issues)
+    return projects
+
+
+def main() -> int:
+    issues: list[str] = []
+    supervised_projects = validate_collection(SUPERVISED, EXPECTED_SUPERVISED_PROJECTS, issues)
+    unsupervised_projects = validate_collection(UNSUPERVISED, EXPECTED_UNSUPERVISED_PROJECTS, issues)
     validate_locked_connect_blocks(issues)
-    validate_markdown_links(SUPERVISED / "README.md", issues)
     validate_markdown_links(REPO / "README.md", issues)
     scan_text(REPO / "README.md", (REPO / "README.md").read_text(encoding="utf-8"), issues)
 
@@ -214,7 +226,12 @@ def main() -> int:
             print(f"- {issue}", file=sys.stderr)
         return 1
 
-    print(f"Portfolio validation passed: {len(projects)} projects, {len(projects)} notebooks, {len(projects)} project READMEs.")
+    total_projects = len(supervised_projects) + len(unsupervised_projects)
+    print(
+        "Portfolio validation passed: "
+        f"{len(supervised_projects)} supervised + {len(unsupervised_projects)} unsupervised = "
+        f"{total_projects} projects, notebooks and project READMEs."
+    )
     return 0
 
 
