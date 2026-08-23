@@ -1,110 +1,112 @@
-# 🩺 Kidney Stone Prediction using Classification Algorithms
+# Kidney Stone Classification
 
-A machine learning project focussed on predicting the presence (or risk) of kidney stones using classification models and clinical / demographic features.
+Classify kidney-stone outcome from urine chemistry measurements.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-The project builds a full pipeline: collecting patient data (age, gender, hydration level, diet, clinical test results, etc.), performing exploratory analysis, engineering features, training classification models (e.g., logistic regression, random forest, XGBoost), evaluating performance, and deriving insights for medical decision-making. The goal is to build a reliable system that helps identify individuals at high risk for kidney stones, enabling preventive care.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `target`
+- **Primary metric:** Macro F1
+- **Goal:** Classify kidney-stone outcome from urine chemistry measurements.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook or Google Colab
+- **Availability:** Included: `kidney-stone-dataset.csv`
+- **Recorded source:** Dataset file is included in this project.
+- **Target:** `target`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset includes features such as: patient age, gender, previous stone history, fluid intake, urinary-calcium/oxalate levels, BMI, diet type, and a target variable indicating presence or diagnosis of kidney stones.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Visualisation of stone vs non-stone groups by age, gender, fluid intake, test results
-* Correlation matrix between features and target
-* Histogram of continuous features; bar plots for categorical features
-* Checking for class imbalance (often fewer stone cases than normal)
-
-### 3. Feature Engineering
-
-* Encoding of categorical variables (e.g., gender, diet type) via label or one-hot encoding
-* Creation of derived features: e.g., calcium/oxalate ratio, fluid_intake_per_kg, years_since_last_stone
-* Scaling of numeric features (StandardScaler or MinMaxScaler) as required
-* Split data into training and test sets ensuring stratification if class is imbalanced
-
-### 4. Modeling
-
-* Trained classification algorithms such as:
-
-  * Logistic Regression (baseline)
-  * Random Forest Classifier (strong performance)
-  * XGBoost/LightGBM for boosted performance
-* Hyperparam-tuning via GridSearchCV/RandomizedSearchCV for parameters like max_depth, n_estimators, learning_rate
-
-### 5. Evaluation
-
-* Metrics used: Accuracy, Precision, Recall, F1-Score, ROC-AUC
-* Examination of confusion matrix: false negatives (undiagnosed stones) have critical clinical implications
-* The best model identifies high-risk patients with high recall while maintaining acceptable precision
-
-### 6. Insights & Application
-
-* Key risk-factors identified: e.g., low fluid intake, high urinary oxalate, previous stone history, diet high in oxalate
-* Suggested interventions: increased hydration, dietary adjustments, follow-up screening for high-risk patients
-* Model can support healthcare providers in targeting preventative measures and monitoring
-
----
-
-## 📁 Project Structure
-
-```
-Kidney-Stone-Prediction/
-│── data/
-│   ├── raw/
-│   └── processed/
-│── notebooks/
-│   └── kidney_stone_prediction.ipynb
-│── src/
-│   ├── preprocess.py
-│   ├── features.py
-│   ├── model.py
-│   └── evaluate.py
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- The sample is small, so cross-validation results are reported with variability.
+- The index export column is removed before modelling.
 
-* Patients with **history of stones + low hydration** had significantly higher risk predicted by the model
-* Feature engineering (especially dietary and urine-test derived ratios) improved discrimination compared to only demographic features
-* Tree-based models (Random Forest / Boosting) outperformed logistic regression due to ability to capture non-linear interactions
-* Balanced model performance required careful handling of class imbalance (e.g., via class weighting or oversampling)
+### Models compared
 
----
+- Logistic Regression
+- Decision Tree
+- Random Forest
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Incorporate **time-series data** (e.g., monthly urine tests, fluid intake logs) for dynamic risk modelling
-* Explore **ensemble methods** (stacking or blending) to further boost performance
-* Deploy model as a web-app for clinicians: input patient features → risk score + recommendations
-* Integrate **explainability tools** (e.g., SHAP) so physicians understand which features drove the risk score
-* Validate model on external datasets (different clinics or populations) to ensure generalisation
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The refurbished notebook was executed successfully against the dataset currently committed in this project. The untouched holdout produced:
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+| Selected model | Accuracy | Macro F1 |
+|---|---:|---:|
+| Random Forest | 0.7222 | 0.7143 |
 
----
+This holdout contains only 18 rows. Treat the result as an educational check, not a stable clinical estimate; the notebook's cross-validation variability is more informative.
+
+These values are a reproducibility record for the current data and dependency range, not a production benchmark.
+
+## Repository structure
+
+```text
+├── kidney_stone_classification.ipynb
+├── README.md
+└── kidney-stone-dataset.csv
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'kidney_stone_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -113,7 +115,7 @@ Kidney-Stone-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

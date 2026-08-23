@@ -1,0 +1,26 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments and local configuration
+.venv/
+venv/
+.env
+.env.*
+
+# Local model and experiment outputs
+*.joblib
+*.pkl
+mlruns/
+wandb/

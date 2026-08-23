@@ -1,106 +1,104 @@
-# ❤️ Heart Disease Prediction using Classification Algorithms
+# Heart Disease Classification
 
-A machine learning project focused on predicting the presence of heart disease using clinical and demographic data along with classification models.
+Classify heart-disease presence from demographic and clinical measurements.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project builds an end-to-end pipeline: ingestion of patient data (e.g., age, blood pressure, cholesterol, chest pain type, maximum heart rate), exploratory data analysis (EDA) to uncover patterns, feature engineering (encoding, normalization), training classification models, and evaluating their performance. The aim is to accurately classify whether a patient has heart disease and offer insights into major risk factors.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `target`
+- **Primary metric:** Macro F1
+- **Goal:** Classify heart-disease presence from demographic and clinical measurements.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Download required: place `heart.csv` in this directory
+- **Recorded source:** [https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset)
+- **Target:** `target`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset includes clinical and demographic features such as: age, sex, chest pain type, resting blood pressure, serum cholesterol, fasting blood sugar, maximum heart rate achieved, exercise-induced angina, old peak ST depression, slope of peak exercise ST segment, number of major vessels, thalassemia indicator, and target label indicating presence or absence of heart disease.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of patients with and without heart disease
-* Feature distributions (age, cholesterol, max heart rate) by class
-* Correlation matrix and heatmap to identify relationships among features
-* Detection of missing values, outliers, skewness and class imbalance
-
-### 3. Feature Engineering
-
-* Encoding categorical features (e.g., chest pain type, thal) into numeric form
-* Handling missing values (imputation)
-* Scaling numerical features (standardization) for model compatibility
-* Constructing interaction features if relevant (e.g., age × cholesterol)
-* Splitting dataset into training and test sets with stratified sampling
-
-### 4. Modeling
-
-Classification algorithms implemented:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **Support Vector Machine** or **XGBoost** for improved performance
-
-### 5. Evaluation
-
-Metrics used to evaluate model performance:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC–AUC
-
-**Result:** The best classification model achieved high accuracy and recall, indicating the system’s capability to correctly identify patients at risk of heart disease.
-
-### 6. Prediction & Insights
-
-* Generated predictions on unseen patient profiles
-* Analyzed feature importance: e.g., chest pain type, maximum heart rate, old peak ST depression emerged as influential
-* Provided actionable insights: focusing on high-risk patients, early screening of key clinical indicators
-
----
-
-## 📁 Project Structure
-
-```
-Heart-Disease-Prediction/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- All preprocessing is fitted on training data only.
+- Recall and the confusion matrix are included because false negatives matter.
 
-* Chest pain type and max heart rate were among the most significant predictors of heart disease
-* Feature standardization and encoding were essential for improved model performance
-* Classification models like Random Forest delivered reliable predictions in this healthcare context
-* The pipeline supports early detection efforts by ranking patients based on risk
+### Models compared
 
----
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- AdaBoost
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Expand dataset to include larger and more diverse patient populations and additional clinical indicators
-* Deploy the model via a web application (Flask/Streamlit) for clinical use and real-time screening
-* Use explainability tools such as SHAP or LIME to interpret predictions for healthcare professionals
-* Evaluate model fairness and bias across different demographics (gender, age, ethnicity)
-* Introduce time-series or longitudinal patient data to predict disease progression rather than just presence
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Repository structure
+
+```text
+├── heart_disease_classification.ipynb
+└── README.md
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'heart_disease_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -109,7 +107,7 @@ Heart-Disease-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

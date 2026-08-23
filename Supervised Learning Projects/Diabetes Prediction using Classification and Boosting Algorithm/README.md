@@ -1,108 +1,103 @@
-# 🩹 Diabetes Prediction using Classification and Boosting Algorithms
+# Diabetes Classification with Tree and Boosting Models
 
-A machine learning project focused on predicting diabetes onset using clinical and demographic data, leveraging classification and boosting algorithms.
+Classify diabetes outcome from diagnostic measurements using tree and boosting models.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project delivers a full pipeline: ingesting patient data (e.g., glucose level, BMI, age, family history), exploratory analysis to identify patterns, feature engineering to transform and encode relevant variables, training classification and boosting models, and evaluating their predictive performance. The objective is to accurately predict the likelihood of diabetes and provide actionable health insights.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `Outcome`
+- **Primary metric:** Macro F1
+- **Goal:** Classify diabetes outcome from diagnostic measurements using tree and boosting models.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost/LightGBM
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Download required: place `diabetes.csv` in this directory
+- **Recorded source:** [https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset](https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset)
+- **Target:** `Outcome`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset includes patient attributes such as age, BMI, blood pressure, glucose levels, insulin level, family history, and target variable indicating presence/absence of diabetes.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of positive vs negative diabetes cases
-* Visualisation of feature distributions such as glucose, BMI, age across classes
-* Correlation matrix and relationships between variables
-* Identification of missing values, outliers, and data quality issues
-
-### 3. Feature Engineering
-
-* Handling missing values (e.g., imputation of zero glucose entries, insulin levels)
-* Encoding categorical features (e.g., family history, gender)
-* Creating derived features such as age * BMI interaction, glucose/BMI ratio
-* Scaling numerical features
-* Splitting into training and test sets using stratification
-
-### 4. Modeling
-
-Algorithms used include:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **Boosting Approaches** such as **XGBoost** or **LightGBM** for improved accuracy
-
-### 5. Evaluation
-
-Metrics used to assess model performance:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC-AUC
-* Feature importance/SHAP values
-
-**Result:** The boosting model achieved the highest accuracy and generalisation, demonstrating that engineered features and advanced algorithms improved predictive power.
-
-### 6. Prediction & Insights
-
-* Derived predictions for unseen patients
-* Analysed feature importance: e.g., glucose level, BMI and age ranked highest
-* Provided insights for health monitoring and risk assessment of diabetes
-* Recommended preventive actions and ongoing monitoring for high-risk individuals
-
----
-
-## 📁 Project Structure
-
-```
-Diabetes-Prediction/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- Repeated test-size experiments were replaced with one untouched holdout.
+- Model selection uses cross-validation on the training set only.
 
-* Elevated glucose and BMI were the most significant predictors of diabetes onset
-* Interaction features (age × BMI) improved model performance
-* Boosting models (XGBoost/LightGBM) outperformed traditional classifiers
-* The developed pipeline can assist healthcare professionals in early risk detection
+### Models compared
 
----
+- Decision Tree
+- Random Forest
+- AdaBoost
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Expand dataset with larger, more diverse populations and longitudinal tracking
-* Incorporate deep learning or sequential models (e.g., recurrent networks for longitudinal data)
-* Deploy predictive engine as a web app (Flask/Streamlit) for healthcare providers
-* Integrate SHAP or LIME for model explainability in clinical settings
-* Monitor model fairness and performance across different demographic groups
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Repository structure
+
+```text
+├── diabetes_classification.ipynb
+└── README.md
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'diabetes_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -111,7 +106,7 @@ Diabetes-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

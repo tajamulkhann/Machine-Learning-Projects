@@ -1,10 +1,30 @@
 # Machine Learning Projects
 
-[Supervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Supervised%20Learning%20Projects)
+A practical machine learning portfolio by **Tajamul Khan**, organised around reproducible notebooks and clear project-level documentation.
 
-[Unsupervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Unsupervised%20Learning%20Projects)
+## Explore the collection
 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/12905a9b-ac44-4115-8faa-473a666c9651" />
+| Category | Projects | What you will find |
+|---|---:|---|
+| [Supervised Learning](Supervised%20Learning%20Projects/) | 29 | Classification, regression, NLP, time-aware evaluation and interpretable pipelines |
+| [Unsupervised Learning](Unsupervised%20Learning%20Projects/) | 5 | Clustering, recommendation and pattern-discovery projects |
+
+## Portfolio standards
+
+- Problem framing, dataset provenance and exact run instructions
+- Portable paths and documented dependencies
+- Reproducible splits and leakage-safe preprocessing
+- Baselines, appropriate metrics and error analysis
+- Verified results only; no invented performance claims
+- Security checks for credentials, tokens and private paths
+
+Start with the [supervised learning project directory](Supervised%20Learning%20Projects/README.md) for the fully refurbished collection.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

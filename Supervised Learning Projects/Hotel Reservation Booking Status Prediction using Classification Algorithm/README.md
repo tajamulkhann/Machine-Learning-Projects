@@ -1,106 +1,104 @@
-# 🏨 Hotel Reservation Booking Status Prediction using Classification Algorithm
+# Hotel Booking Status Classification
 
-A machine learning project aimed at predicting the booking status of hotel reservations using classification techniques, guest data, booking attributes, and feature engineering.
+Predict whether a hotel reservation will be cancelled from booking and guest attributes.
 
----
+## Overview
 
-## 📌 Project Overview
+This project is a focused, reproducible classification case study. The notebook covers data checks, meaningful exploratory analysis, leakage-safe preprocessing, a dummy baseline, cross-validated model comparison, untouched holdout evaluation and model interpretation.
 
-This project encompasses the full pipeline: importing reservation data (guest demographics, booking lead time, stay duration, market segment, deposit type, cancellations), conducting exploratory analysis to identify booking drop-off patterns, engineering features, training classification models, and evaluating predictive performance. The objective is to forecast whether a hotel reservation will result in a booking status (e.g., “Cancelled” vs “Completed”) and provide actionable insights to hospitality management.
+## Problem statement
 
----
+- **Task:** Classification
+- **Target:** `booking_status`
+- **Primary metric:** Macro F1
+- **Goal:** Predict whether a hotel reservation will be cancelled from booking and guest attributes.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+- **Availability:** Download required: place `Hotel Reservations.csv` in this directory
+- **Recorded source:** [https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset](https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset)
+- **Target:** `booking_status`
 
----
+Dataset licensing and usage conditions remain with the original publisher. Large or externally hosted data is intentionally not duplicated here.
 
-## 🔄 Workflow Summary
+## Project workflow
 
-### 1. Data Collection
-
-Dataset with features including: lead time, arrival date, stay duration nights, number of special requests, customer type, market segment, deposit type, ADR (average daily rate), number of adults/children, and target variable indicating booking status.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of bookings that were cancelled vs completed
-* Visualisations of lead time, stay duration, deposit type by booking outcome
-* Correlation matrix among variables
-* Identification of missing data, outliers, and class imbalance
-
-### 3. Feature Engineering
-
-* Encoding categorical variables (e.g., market segment, customer type, deposit type)
-* Creating derived features such as total guest count (adults + children), stay length buckets, lead-time categories
-* Scaling numerical features for model compatibility
-* Splitting data into training and test sets with stratified sampling
-
-### 4. Modeling
-
-Classification algorithms deployed:
-
-* **Logistic Regression** (baseline)
-* **Random Forest Classifier** (strong performer)
-* **(Optional) Gradient Boosting / XGBoost** for improved performance
-
-### 5. Evaluation
-
-Key metrics to evaluate model performance:
-
-* Accuracy
-* Precision, Recall, F1-Score
-* Confusion Matrix
-* ROC–AUC
-* Feature importance insights
-
-**Result:** The Random Forest (or chosen classifier) achieved the highest predictive performance in booking status classification, with features such as lead time, deposit type and stay duration ranking high in importance.
-
-### 6. Prediction & Insights
-
-* Generated predictions for unseen reservation entries
-* Analysed feature importance: lead time, deposit type, and guest count emerged as strong predictors
-* Provided actionable recommendations: shorter lead-times and refundable deposits showed higher risk of cancellation, enabling proactive strategies
-
----
-
-## 📁 Project Structure
-
-```
-Hotel-Reservation-Booking-Status-Prediction/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Focused EDA
+      ↓
+Train / holdout split
+      ↓
+Pipeline-based preprocessing
+      ↓
+Baseline and cross-validation
+      ↓
+Holdout evaluation
+      ↓
+Error analysis and interpretation
 ```
 
----
+## Modelling decisions
 
-## 📈 Key Findings
+- Booking identifiers are removed.
+- Categorical encoders and imputers are isolated inside the model pipeline.
 
-* Reservations with longer lead times and non-refundable deposits had lower cancellation risk
-* Derived features such as total guest count and stay length buckets significantly impacted model performance
-* Feature engineering improved outcome prediction compared to using raw variables only
-* The classification model enables hotel managers to prioritise high-risk bookings and adjust policies accordingly
+### Models compared
 
----
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- AdaBoost
 
-## 🚀 Future Improvements
+## Evaluation
 
-* Integrate real-time booking system data (e.g., seasonal demand spikes, event dates, competitor pricing) for enhanced prediction
-* Apply ensemble stacking or deep-learning methods to further improve accuracy
-* Deploy model as a web-based dashboard or service for hotel operations teams
-* Monitor model fairness across booking type segments (e.g., group vs individual) and adapt strategy accordingly
-* Implement feedback loop for live booking data to continuously retrain and update the model
+The notebook evaluates macro F1 and accuracy, with class-level precision/recall and a confusion matrix.
 
----
+## Verified results
 
-## 🧑‍💻 Author
+The dataset is not committed, so the refurbished notebook was statically validated but not executed. Results are intentionally omitted until the recorded dataset is downloaded and the notebook runs end to end.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Repository structure
+
+```text
+├── hotel_booking_status_classification.ipynb
+└── README.md
+```
+
+## How to run
+
+From this project directory:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab 'hotel_booking_status_classification.ipynb'
+```
+
+If the dataset is not included, download it from the recorded source and use the exact filename shown above. Run notebook cells from top to bottom.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Future improvements
+
+- Validate on a newer or independently collected dataset.
+- Add domain-specific error costs and decision thresholds.
+- Track data drift and subgroup performance before deployment.
+- Package the fitted pipeline only after data and licensing checks.
+
+## Author
+
+**Tajamul Khan**
+
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -109,7 +107,7 @@ Hotel-Reservation-Booking-Status-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">
