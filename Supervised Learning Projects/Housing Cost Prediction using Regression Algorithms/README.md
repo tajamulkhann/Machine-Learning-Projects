@@ -1,106 +1,68 @@
-# 🏠 Housing Cost Prediction using Regression Algorithms
+# Housing Cost Prediction using Regression Algorithms
 
-A machine learning project focused on predicting real-estate housing costs using regression models, historical property data, and engineered features.
+Estimate monthly housing cost from size, location, building, amenity, and market features with honest error analysis.
 
----
+## Why this project matters
 
-## 📌 Project Overview
+This is a portfolio-ready supervised-learning workflow built around a current business use case. It shows how to move from a documented data contract to a baseline, a validated model, honest holdout evaluation, and responsible interpretation.
 
-This project builds a comprehensive pipeline: collecting property datasets (location, area, number of rooms, amenities, year built, etc.), performing exploratory analysis to uncover cost drivers, engineering features, training regression models, and evaluating their performance. The goal is to accurately estimate housing costs and provide insights for real-estate decision-making.
+## Problem framing
 
----
+- **Learning type:** Supervised regression
+- **Primary methods:** ridge regression and random forests
+- **Evaluation:** MAE, RMSE, and R²
+- **Decision boundary:** Predictions support prioritization and review; they do not replace domain judgment.
 
-## 🧰 Tech Stack
+## Data
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+The notebook creates a deterministic, domain-shaped demonstration dataset locally. This keeps the project executable and avoids publishing private or questionably licensed data. The schema, target, caveats, and migration path to real data are documented in the notebook.
 
----
+## Workflow
 
-## 🔄 Workflow Summary
+1. Reproducible environment and seed
+2. Data contract and quality checks
+3. Exploratory analysis
+4. Leakage-safe or chronological split
+5. Baseline and candidate-model comparison
+6. Holdout metrics and diagnostics
+7. Explainability or operational interpretation
+8. Limitations, monitoring, and next steps
 
-### 1. Data Collection
+## Results
 
-Historical housing price data capturing features like zone, area in square feet/meters, number of bedrooms, number of bathrooms, age of property, proximity to amenities, and target variable as housing cost.
+The notebook is committed with executed outputs. Open [new_york_housing_cost_regression.ipynb](new_york_housing_cost_regression.ipynb) to inspect the actual model comparison, plots, holdout metrics, diagnostics, and sample predictions generated from the reproducible demo data.
 
-### 2. Exploratory Data Analysis (EDA)
+## Run locally
 
-* Distribution of housing costs across segments
-* Visualisations of cost vs area, number of rooms, age of property
-* Heatmap of feature correlations
-* Identifying outliers, missing values, skewness
-
-### 3. Feature Engineering
-
-* Encoding categorical variables (e.g., zone/region)
-* Creating derived features such as price per square foot, age bucket, amenities count
-* Log-transforming skewed features if needed
-* Scaling numerical variables for model compatibility
-* Splitting data into training and test sets
-
-### 4. Modeling
-
-Regression algorithms applied:
-
-* **Linear Regression** (baseline)
-* **Random Forest Regressor** or **Gradient Boosting Regressor** (strong performers)
-* **(Optional) XGBoost / LightGBM** for advanced modelling
-
-### 5. Evaluation
-
-Metrics used to measure model performance:
-
-* Mean Absolute Error (MAE)
-* Root Mean Squared Error (RMSE)
-* R² (coefficient of determination)
-* Residual analysis
-
-**Result:** The top-performing regression model delivered low error and strong R², demonstrating robust estimation of housing costs and highlighting key features like area, region and property age.
-
-### 6. Prediction & Insights
-
-* Generated cost predictions for new property entries
-* Analysed feature importance: e.g., area size, zone, amenities count emerged as top drivers
-* Provided actionable guidance: how features influence cost and insights for buyers/sellers
-
----
-
-## 📁 Project Structure
-
-```
-Housing-Cost-Prediction/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r ../requirements.txt
+jupyter lab "new_york_housing_cost_regression.ipynb"
 ```
 
----
+Run cells from top to bottom. Use the recorded package versions and replace the demo data only after matching the documented schema.
 
-## 📈 Key Findings
+## Technologies
 
-* Area size and region (zone) were the most influential predictors of housing cost
-* Derived features such as price per square foot and age bucket improved accuracy significantly
-* Regression models like Random Forest and Gradient Boosting outperformed simple linear regression
-* The pipeline supports real-estate stakeholders with actionable cost estimations
+- Python
+- pandas and NumPy
+- scikit-learn
+- Matplotlib and Seaborn
+- Jupyter Notebook
 
----
+## Limitations and next steps
 
-## 🚀 Future Improvements
+- Demo metrics are not production benchmarks.
+- Validate on licensed, representative, time-appropriate data.
+- Audit leakage, calibration, subgroup behavior, drift, and business error costs.
+- Add human-review, monitoring, retraining, and rollback policies before deployment.
 
-* Incorporate external factors like market trend indexes, interest rates, inflation, and macro-economic indicators
-* Explore time-series modelling for market dynamics or rolling predictions
-* Deploy as a web application (Flask/Streamlit) for real-time cost estimation
-* Incorporate satellite imagery or map-based features (e.g., proximity to transport) to enhance predictions
-* Continuously update model with new property data to maintain accuracy and adapt to market changes
+## Author
 
----
+**Tajamul Khan**
 
-## 🧑‍💻 Author
-
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+[GitHub](https://github.com/tajamulkhann) · [LinkedIn](https://www.linkedin.com/in/tajamulkhann/) · Instagram: `@tajamul.codes`
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -109,7 +71,7 @@ Housing-Cost-Prediction/
 <a href="https://www.linkedin.com/in/tajamulkhann/">
 <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
-<a href="https://www.instagram.com/tajamul.datascientist/" target="_blank">
+<a href="https://www.instagram.com/tajamul.codes/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 <a href="https://topmate.io/tajamulkhan" target="_blank">

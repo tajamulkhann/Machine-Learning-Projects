@@ -1,10 +1,13 @@
 # Machine Learning Projects
 
-[Supervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Supervised%20Learning%20Projects)
+A practical portfolio of supervised and unsupervised machine-learning projects with notebooks, documentation, reproducible workflows, and visible execution evidence.
 
-[Unsupervised Learning Projects](https://github.com/tajamulkhann/Machine-Learning/tree/main/Unsupervised%20Learning%20Projects)
+| Collection | Projects | Explore |
+|---|---:|---|
+| Supervised Learning | 50 | [Browse projects](Supervised%20Learning%20Projects/) |
+| Unsupervised Learning | 5 | [Browse projects](Unsupervised%20Learning%20Projects/) |
 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/12905a9b-ac44-4115-8faa-473a666c9651" />
+<img width="1280" height="720" alt="Machine learning projects" src="https://github.com/user-attachments/assets/12905a9b-ac44-4115-8faa-473a666c9651" />
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

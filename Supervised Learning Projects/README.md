@@ -1,6 +1,91 @@
-# Supervised Machine Learning Projects 
+# Supervised Machine Learning Projects
 
-Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
+This collection contains **50 supervised-learning projects** spanning classification, regression, NLP, forecasting, healthcare, finance, operations, risk, and customer analytics.
+
+The original collection was audited project by project:
+
+- **18 maintained projects** kept their existing code and saved outputs.
+- **11 refurbished projects** received targeted repairs for broken paths, duplicate work, missing data/docs, or incorrect problem framing.
+- **21 new projects** add current, portfolio-ready use cases with reproducible data and executed outputs.
+
+Read the [selective audit report](AUDIT.md) for the keep/refurbish decisions and project-level findings.
+
+## Portfolio standards
+
+- Saved notebook outputs remain visible for reviewers.
+- Every project includes a baseline, validation strategy, holdout evaluation, and limitations.
+- Time-series projects use chronological splits; classification projects report class-aware metrics.
+- New demo datasets are deterministic and clearly identified—no synthetic result is presented as a real-world benchmark.
+- Relative paths, reproducible seeds, dependency guidance, and the locked creator branding are preserved.
+
+## Project index
+
+| Project | Status | Data | Notebook evidence |
+|---|---|---|---|
+| [AI Resume Screening and Candidate Fit Prediction](AI%20Resume%20Screening%20and%20Candidate%20Fit%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Airbnb Stock Price Prediction](Airbnb%20Stock%20Price%20Prediction/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Airline Satisfaction Prediction using Classification Algorithms](Airline%20Satisfaction%20Prediction%20using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Airlines Delay Prediction using Classification Algorithms](Airlines%20Delay%20Prediction%20using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Banknote Authentication Using Classification Algorithms](Banknote%20Authentication%20Using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Breast Cancer Prediction using Classification Algorithms](Breast%20Cancer%20Prediction%20using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Chronic Kidney Disease Prediction Using Classifiation Algorithms](Chronic%20Kidney%20Disease%20Prediction%20Using%20Classifiation%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Credit Card Default Risk Prediction](Credit%20Card%20Default%20Risk%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Credit Score Prediction using Classification Algorithm](Credit%20Score%20Prediction%20using%20Classification%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Crop Yield Prediction](Crop%20Yield%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Customer Churn Analysis using Classification Algorithms](Customer%20Churn%20Analysis%20using%20Classification%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Customer Churn Analysis using Logistic Regression](Customer%20Churn%20Analysis%20using%20Logistic%20Regression/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Customer Lifetime Value Prediction](Customer%20Lifetime%20Value%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Customer Satisfaction Analysis using Classification Algorithms](Customer%20Satisfaction%20Analysis%20using%20Classification%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Customer Support Ticket Routing](Customer%20Support%20Ticket%20Routing/) | New | Reproducible domain demo | Executed output committed |
+| [Diabetes Prediction using Classification and Boosting Algorithm](Diabetes%20Prediction%20using%20Classification%20and%20Boosting%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Diamond Price Prediction using Regressor Algorithms](Diamond%20Price%20Prediction%20using%20Regressor%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Drug Classification Using Classification Algorithms](Drug%20Classification%20Using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [E-Commerce Purchase Intention Prediction](E-Commerce%20Purchase%20Intention%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [E-Commerce Shipping Prediction using Classification Algorithm](E-Commerce%20Shipping%20Prediction%20using%20Classification%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Email Spam Detection](Email%20Spam%20Detection/) | New | Reproducible domain demo | Executed output committed |
+| [Employee Attrition Risk Prediction](Employee%20Attrition%20Risk%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Energy Consumption Forecasting](Energy%20Consumption%20Forecasting/) | New | Reproducible domain demo | Executed output committed |
+| [Fake News Detection with NLP](Fake%20News%20Detection%20with%20NLP/) | New | Reproducible domain demo | Executed output committed |
+| [Flight Fare Prediction](Flight%20Fare%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Food Delivery ETA Prediction](Food%20Delivery%20ETA%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Heart Disease Prediction using Classification Algorithms](Heart%20Disease%20Prediction%20using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Hospital Readmission Risk Prediction](Hospital%20Readmission%20Risk%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Hotel Reservation Booking Status Prediction using Classification Algorithm](Hotel%20Reservation%20Booking%20Status%20Prediction%20using%20Classification%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Housing Cost Prediction using Regression Algorithms](Housing%20Cost%20Prediction%20using%20Regression%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Insurance Claim Severity Prediction](Insurance%20Claim%20Severity%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Insurance Premium Prediction using Regression Algorithms](Insurance%20Premium%20Prediction%20using%20Regression%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [IPL Winner Prediction using Classification Algorithms](IPL%20Winner%20Prediction%20using%20Classification%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Kidney Stone Prediction using Classification Algorithm](Kidney%20Stone%20Prediction%20using%20Classification%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Laptop Price Prediction using Regression Algorithms](Laptop%20Price%20Prediction%20using%20Regression%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Loan Approval Prediction using Classification Algorithms](Loan%20Approval%20Prediction%20using%20Classification%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Phishing URL Detection](Phishing%20URL%20Detection/) | New | Reproducible domain demo | Executed output committed |
+| [Predictive Maintenance Failure Prediction](Predictive%20Maintenance%20Failure%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Product Review Sentiment Analysis](Product%20Review%20Sentiment%20Analysis/) | New | Reproducible domain demo | Executed output committed |
+| [Rain Prediction in Australia using Classification Algorithms](Rain%20Prediction%20in%20Australia%20using%20Classification%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Rainfall Amount Prediction using Regression Algorithms](Rainfall%20Amount%20Prediction%20using%20Regression%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Retail Demand Forecasting](Retail%20Demand%20Forecasting/) | New | Reproducible domain demo | Executed output committed |
+| [Salary Prediction for Data Science Jobs using Regression Algorithms](Salary%20Prediction%20for%20Data%20Science%20Jobs%20using%20Regression%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Stroke Prediction using Machine Learning Classification Algorithm](Stroke%20Prediction%20using%20Machine%20Learning%20Classification%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Supply Chain Cost Prediction](Supply%20Chain%20Cost%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Telemarketing Campaign Response using Classification Algorithms](Telemarketing%20Campaign%20Response%20using%20Classification%20Algorithms/) | Refurbished | Committed data or reproducible demo | Corrected workflow; output re-executed |
+| [Toxic Comment Classification](Toxic%20Comment%20Classification/) | New | Reproducible domain demo | Executed output committed |
+| [Traffic Accident Severity Prediction](Traffic%20Accident%20Severity%20Prediction/) | New | Reproducible domain demo | Executed output committed |
+| [Used Vehicle Price Prediction using Regression Algorithm](Used%20Vehicle%20Price%20Prediction%20using%20Regression%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
+| [Vehicle Insurance Claim Fraud Detection using Classification Algorithms](Vehicle%20Insurance%20Claim%20Fraud%20Detection%20using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
+
+## Run the portfolio
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r "Supervised Learning Projects/requirements.txt"
+```
+
+Open any project notebook and run cells from top to bottom. Existing projects with external dataset links retain their recorded outputs; new projects run without external downloads.
+
+## Author
+
+**Tajamul Khan**
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
@@ -37,4 +122,3 @@ Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
 <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white">
 </a>
 </div>
-
