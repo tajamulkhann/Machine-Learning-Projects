@@ -82,7 +82,7 @@ def validate_notebooks(projects: list[Path]) -> None:
 
 def validate_branding() -> None:
     readmes = sorted(path for path in ROOT.rglob("*") if path.is_file() and path.name.lower() == "readme.md")
-    expected = EXPECTED_PROJECTS + 1 + 5 + 1 + 1  # supervised projects/index + unsupervised projects/index + root
+    expected = EXPECTED_PROJECTS + 1 + 30 + 1 + 1  # supervised projects/index + unsupervised projects/index + root
     if len(readmes) != expected:
         fail(f"expected {expected} repository READMEs, found {len(readmes)}")
     locked = CONNECT.rstrip()

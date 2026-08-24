@@ -1,6 +1,66 @@
 # Unsupervised Machine Learning Projects
 
-Completed by [Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/)
+A 30-project portfolio covering modern clustering, anomaly detection, topic discovery, vector retrieval, recommendation, association-rule mining, dimensionality reduction, and graph communities.
+
+## Portfolio composition
+
+- **5 existing projects preserved:** 2 maintained and 3 selectively refurbished
+- **25 new projects:** selected for current portfolio relevance across GenAI, vector search, reliability, cybersecurity, industry, geospatial, healthcare, and recommendation use cases
+- **30 executed notebooks:** every project contains saved code outputs
+
+The selection was informed by current clustering, recommendation, embedding, and retrieval activity documented by [Kaggle's Clustering Cup 2026](https://www.kaggle.com/competitions/clustering-cup-2026), [Hugging Face Sentence Transformers](https://huggingface.co/docs/hub/en/sentence-transformers), and the [GitHub unsupervised-machine-learning topic](https://github.com/topics/unsupervised-machine-learning).
+
+## Projects
+
+| # | Project | Primary method | Decision |
+|---:|---|---|---|
+| 1 | [Basic Movie Recommender System](Basic%20Movie%20Recommender%20System/) | Recommendation | Refurbished |
+| 2 | [Book Recommendation Engine](Book%20Recommendation%20Engine/) | Recommendation | Refurbished |
+| 3 | [Customer Segmentation Using Clustering Techniques](Customer%20Segmentation%20Using%20Clustering%20Techniques/) | Clustering | Refurbished |
+| 4 | [Fraudulent Transaction Detection](Fraudulent%20Transaction%20Detection/) | Anomaly detection | Maintained |
+| 5 | [Market Basket Analysis](Market%20Basket%20Analysis/) | Association rules | Maintained |
+| 6 | [LLM Prompt Intent Clustering](LLM%20Prompt%20Intent%20Clustering/) | Text clustering and similarity | New |
+| 7 | [RAG Document Chunk Clustering](RAG%20Document%20Chunk%20Clustering/) | Text clustering and similarity | New |
+| 8 | [Customer Support Topic Discovery](Customer%20Support%20Topic%20Discovery/) | Text clustering and similarity | New |
+| 9 | [Research Paper Topic Mapping](Research%20Paper%20Topic%20Mapping/) | Text clustering and similarity | New |
+| 10 | [Product Review Theme Mining](Product%20Review%20Theme%20Mining/) | Text clustering and similarity | New |
+| 11 | [Duplicate Question Discovery](Duplicate%20Question%20Discovery/) | Text clustering and similarity | New |
+| 12 | [Resume Skill Taxonomy Discovery](Resume%20Skill%20Taxonomy%20Discovery/) | Text clustering and similarity | New |
+| 13 | [AI Agent Trace Pattern Mining](AI%20Agent%20Trace%20Pattern%20Mining/) | Behavioral clustering | New |
+| 14 | [E-Commerce Shopper Behavior Clustering](E-Commerce%20Shopper%20Behavior%20Clustering/) | Behavioral clustering | New |
+| 15 | [Patient Lifestyle Phenotyping](Patient%20Lifestyle%20Phenotyping/) | Behavioral clustering | New |
+| 16 | [EV Charging Session Clustering](EV%20Charging%20Session%20Clustering/) | Behavioral clustering | New |
+| 17 | [Maritime Vessel Trajectory Clustering](Maritime%20Vessel%20Trajectory%20Clustering/) | Behavioral clustering | New |
+| 18 | [Crop Field Management Zone Clustering](Crop%20Field%20Management%20Zone%20Clustering/) | Behavioral clustering | New |
+| 19 | [Air Quality Monitoring Station Clustering](Air%20Quality%20Monitoring%20Station%20Clustering/) | Behavioral clustering | New |
+| 20 | [Music Listener Persona Clustering](Music%20Listener%20Persona%20Clustering/) | Behavioral clustering | New |
+| 21 | [Supply Chain Route Pattern Clustering](Supply%20Chain%20Route%20Pattern%20Clustering/) | Behavioral clustering | New |
+| 22 | [Cybersecurity Network Traffic Anomaly Detection](Cybersecurity%20Network%20Traffic%20Anomaly%20Detection/) | Anomaly detection | New |
+| 23 | [Cloud Infrastructure Log Anomaly Detection](Cloud%20Infrastructure%20Log%20Anomaly%20Detection/) | Anomaly detection | New |
+| 24 | [Manufacturing Sensor Anomaly Detection](Manufacturing%20Sensor%20Anomaly%20Detection/) | Anomaly detection | New |
+| 25 | [Energy Consumption Anomaly Detection](Energy%20Consumption%20Anomaly%20Detection/) | Anomaly detection | New |
+| 26 | [IoT Device Behavior Anomaly Detection](IoT%20Device%20Behavior%20Anomaly%20Detection/) | Anomaly detection | New |
+| 27 | [LLM Token Cost Anomaly Detection](LLM%20Token%20Cost%20Anomaly%20Detection/) | Anomaly detection | New |
+| 28 | [AI Image Embedding Clustering and Visual Search](AI%20Image%20Embedding%20Clustering%20and%20Visual%20Search/) | Embedding clustering and retrieval | New |
+| 29 | [Product Catalog Similarity Recommender](Product%20Catalog%20Similarity%20Recommender/) | Content recommendation | New |
+| 30 | [Social Network Community Detection](Social%20Network%20Community%20Detection/) | Graph community detection | New |
+
+## Portfolio standards
+
+- No prediction target is used during unsupervised model fitting
+- Internal metrics are paired with stability and interpretation checks
+- Synthetic labels, when present, are reserved for retrospective diagnostics
+- Demo datasets and results are explicitly labelled
+- Paths are portable, seeds are reproducible, and notebook outputs are committed
+- Recommendations and anomaly flags are framed as decision-support signals, not ground truth
+
+## Audit trail
+
+The keep/refurbish rationale for the original five projects is recorded in [AUDIT.md](AUDIT.md).
+
+## Author
+
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

@@ -1,95 +1,77 @@
-# 🛒 Market Basket Analysis
+# Market Basket Analysis
 
-A machine learning project focused on understanding customer purchase behaviour by applying unsupervised association rule mining and clustering techniques to transaction data.
+An educational association-rule project that explains frequent itemsets, support, confidence, lift, and cross-sell interpretation.
 
----
+## Project status
 
-## 📌 Project Overview
+- **Portfolio decision:** Maintained — existing executed notebook retained
+- **Learning type:** Unsupervised learning
+- **Core method:** Apriori frequent itemsets and association rules
+- **Execution:** Notebook executed successfully with outputs committed
 
-This project implements a full workflow: collecting transaction data (customer ID, items purchased, date of purchase, purchase context), performing exploratory analysis of purchasing patterns, engineering features such as basket size and item co-occurrence metrics, applying market-basket modelling (e.g., association rules, frequent itemsets) and clustering to segment buying behaviour. The goal is to extract actionable insights into product bundling, cross-sell opportunities, and customer segmentation.
+## Problem statement
 
----
+The project demonstrates how patterns, similarities, communities, or anomalies can be discovered without using a prediction target during model fitting. Results are interpreted as exploratory signals rather than ground truth.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, mlxtend (or equivalent) for association rules, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+The maintained notebook uses a small transparent transaction set so every transformation and rule can be inspected directly.
 
----
+The notebook documents its data contract, reproducible seed, quality checks, and any synthetic proxy labels used only for retrospective diagnostics.
 
-## 🔄 Workflow Summary
+## Workflow
 
-### 1. Data Collection
-
-Transaction dataset containing features such as customer ID, items purchased in each transaction, purchase date, store/online channel, and possibly demographic or product category information.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of basket sizes (number of items per transaction)
-* Frequency distribution of individual items and item categories
-* Visualisations of popular item combinations and co-purchase counts
-* Correlation or support/ lift metrics for initial item pair exploration
-* Identification of sparsity and long-tail purchase behaviour
-
-### 3. Feature Engineering
-
-* Convert transactional data into a binary item indicator matrix (one-hot encoded items per basket)
-* Compute derived features such as basket size, number of unique items, total spend per basket
-* Extract item/item-category counts and transitional features (items frequently co-purchased)
-* Possibly cluster customers based on basket behaviour (e.g., frequent small baskets vs infrequent large baskets)
-
-### 4. Modelling (Association Rules & Clustering)
-
-* Apply frequent itemset mining (e.g., Apriori algorithm) to identify itemsets with high support
-* Generate association rules with metrics such as support, confidence, lift, and identify strong cross-sell candidates
-* Perform clustering on customer basket features to segment based on shopping behaviour (e.g., K-Means, hierarchical clustering)
-* Choose optimal cluster count via Silhouette score or elbow method if clustering applied
-
-### 5. Insights & Business Application
-
-* Identify top item combinations that frequently sell together (e.g., items A + B)
-* From association rules, identify high-lift combinations for cross-promotion and product placement
-* Segment customers into behaviour‐based clusters and map marketing strategies accordingly (e.g., high-basket high-value segment vs low-basket frequent buyers)
-* Provide actionable recommendations: bundling deals, store layout optimization, personalized offers
-
----
-
-## 📁 Project Structure
-
-```
-Market-Basket-Analysis/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Feature representation and scaling
+      ↓
+Unsupervised model comparison
+      ↓
+Internal metrics and stability checks
+      ↓
+Interpretation, visualization, and limitations
 ```
 
----
+## Evaluation
 
-## 📈 Key Findings
+The notebook uses method-appropriate evidence such as silhouette score, Davies-Bouldin index, cluster stability, retrieval similarity, graph structure, anomaly-score diagnostics, and post-hoc synthetic checks. No demo result is presented as a production benchmark.
 
-* A small subset of item combinations showed significantly higher lift, indicating strong cross-sell opportunities
-* Basket behaviour clustered into distinct groups, e.g., frequent small-basket vs less frequent large-basket segments
-* Feature engineering (basket size, unique item count) enhanced clustering separability and meaningful segment profiles
-* The derived insights support business tactics such as targeted bundling, personalised promotions, and product-placement strategies
+## Repository structure
 
----
+```text
+├── Market Basket Analysis.ipynb
+└── README.md
+```
 
-## 🚀 Future Improvements
+## How to run
 
-* Expand data to include temporal purchase sequences for sequential pattern mining (e.g., market-basket tipping analysis)
-* Integrate deep-learning or graph-based methods for discovering complex co-purchase networks
-* Deploy interactive dashboards (e.g., Streamlit) for non-technical stakeholders to explore item relationships and customer segments
-* Incorporate demographic/customer profile data (age, region, loyalty status) to enrich basket segmentation
-* Build real-time recommendation engine based on live basket data and association rules
+From the repository root:
 
----
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r "Unsupervised Learning Projects/requirements.txt"
+jupyter lab "Unsupervised Learning Projects/Market Basket Analysis/Market Basket Analysis.ipynb"
+```
 
-## 🧑‍💻 Author
+Run the notebook from top to bottom. Saved outputs are included for review.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Responsible use
+
+Discovered groups and anomaly flags do not establish identity, intent, causality, risk, or business impact. Production use requires domain review, representative data, privacy controls, monitoring, and decision-specific evaluation.
+
+## Author
+
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
