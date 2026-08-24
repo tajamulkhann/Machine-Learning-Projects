@@ -1,6 +1,6 @@
 # Unsupervised Machine Learning Projects
 
-A curated portfolio of **30 unsupervised machine learning projects** covering clustering, anomaly detection, topic discovery, recommendation systems, vector retrieval, association-rule mining, dimensionality reduction, behavioral segmentation, and graph community detection.
+A curated portfolio of **30 unsupervised machine learning projects** covering clustering, anomaly detection, topic discovery, recommendation systems, vector retrieval, association-rule mining, dimensionality reduction, behavioral segmentation and graph community detection.
 
 The repository is designed as a practical reference for learners, practitioners, recruiters, and reviewers who want to explore complete unsupervised learning workflows with reproducible code and preserved notebook outputs.
 
