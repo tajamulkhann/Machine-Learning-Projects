@@ -1,6 +1,6 @@
 # Supervised Machine Learning Projects
 
-A curated portfolio of **50 supervised machine learning projects** covering classification, regression, NLP, forecasting, healthcare, finance, operations, risk, and customer analytics.
+A curated portfolio of **50 supervised machine learning projects** covering classification, regression, NLP, forecasting, healthcare, finance, operations, risk and customer analytics.
 
 The repository is designed as a practical reference for learners, practitioners, recruiters, and reviewers who want to explore complete machine learning workflows with reproducible code and preserved notebook outputs.
 
@@ -9,16 +9,16 @@ The repository is designed as a practical reference for learners, practitioners,
 - End-to-end supervised learning projects with practical problem statements.
 - Classification, regression, NLP, forecasting, risk, healthcare, finance, and customer analytics use cases.
 - Executed notebook outputs preserved for easier review.
-- Reproducible workflows with validation, holdout evaluation, and documented limitations.
-- A mix of maintained original projects, refurbished projects, and newly added portfolio projects.
+- Reproducible workflows with validation, holdout evaluation and documented limitations.
+- A mix of maintained original projects, refurbished projects and newly added portfolio projects.
 
 ## Portfolio Standards
 
 - Saved notebook outputs remain visible for reviewers.
-- Every project includes a baseline, validation strategy, holdout evaluation, and limitations.
+- Every project includes a baseline, validation strategy, holdout evaluation and limitations.
 - Time-series projects use chronological splits; classification projects report class-aware metrics.
 - New demo datasets are deterministic and clearly identified—no synthetic result is presented as a real-world benchmark.
-- Relative paths, reproducible seeds, dependency guidance, and the locked creator branding are preserved.
+- Relative paths, reproducible seeds, dependency guidance and the locked creator branding are preserved.
 
 ## Project Index
 
@@ -87,7 +87,7 @@ Each project directory contains the relevant notebook and supporting assets. Not
 
 ## Author
 
-**Tajamul Khan**
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 
