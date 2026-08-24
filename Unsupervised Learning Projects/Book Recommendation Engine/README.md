@@ -1,106 +1,77 @@
-# 📚 Book Recommendation Engine
+# Book Recommendation Engine
 
-A machine learning project focused on developing a recommendation system to suggest books by leveraging collaborative-filtering and content-based algorithms.
+An item-based book recommender built from the Book-Crossing ratings committed with the project.
 
----
+## Project status
 
-## 📌 Project Overview
+- **Portfolio decision:** Refurbished — broken paths and deprecated APIs repaired; datasets and application retained
+- **Learning type:** Unsupervised learning
+- **Core method:** Nearest-neighbour collaborative filtering with cosine distance
+- **Execution:** Notebook executed successfully with outputs committed
 
-This project implements an end-to-end recommendation pipeline: dataset ingestion of books, users and ratings; exploratory analysis of user–book interactions; feature engineering for content attributes and interaction metrics; building both collaborative-filtering and content-based models; and delivering book suggestions tailored to users. The goal is to enhance reading discovery and user engagement through personalized recommendations.
+## Problem statement
 
----
+The project demonstrates how patterns, similarities, communities, or anomalies can be discovered without using a prediction target during model fitting. Results are interpreted as exploratory signals rather than ground truth.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn, surprise (or equivalents)
-* **Environment:** Jupyter Notebook / Google Colab
+Included Book-Crossing books, users, and explicit-rating files are validated and filtered with documented support thresholds.
 
----
+The notebook documents its data contract, reproducible seed, quality checks, and any synthetic proxy labels used only for retrospective diagnostics.
 
-## 🔄 Workflow Summary
+## Workflow
 
-### 1. Data Collection
-
-Dataset comprised of book metadata (title, author, ISBN, genre), user ratings or interactions, and possibly implicit feedback (reads, favourites).
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of ratings, number of users per book and number of books per user
-* Visualisations of rating trends, genre popularity and user activity
-* Correlation analysis and sparsity assessment of the user-book matrix
-* Identification of popular vs niche books and user patterns
-
-### 3. Feature Engineering
-
-* Encoding book metadata (genre, author, publication year)
-* Creating derived features such as average book rating, number of ratings, user reading frequency
-* Building user-book interaction matrix
-* Constructing content-based similarity vectors and collaborative-filtering neighbourhoods
-* Handling cold-start (new user/new book) scenarios
-
-### 4. Modeling
-
-Recommendation approaches used:
-
-* **Collaborative Filtering** (user-based/item-based) with similarity metrics (cosine, Pearson)
-* **Content-Based Filtering** using book metadata and user profile vectors
-* **Hybrid Approach** combining both techniques for better coverage
-
-### 5. Evaluation
-
-Key metrics and evaluation strategies:
-
-* Precision@K, Recall@K, Mean Average Precision (MAP)
-* Hit rate, Coverage, Diversity of recommendations
-* Offline testing using train/test splits, leave-one-out or time-based splitting
-* Addressing sparsity and cold-start impact
-
-**Result:** The recommendation system successfully provided personalized book suggestions, showing improved relevance over popularity-only baseline and demonstrating balanced performance across active and new users.
-
-### 6. Insights & Business Application
-
-* Identified book clusters by genre/author popularity and user segment reading patterns
-* Derived actionable insights: e.g., users who liked high-rating author A are likely to appreciate low-rating genre B books when guided
-* Provided strategic recommendations for book platform: personalised email campaigns, improved discovery UI, cross-merchandising suggestions
-
----
-
-## 📁 Project Structure
-
-```
-Book-Recommendation-Engine/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Feature representation and scaling
+      ↓
+Unsupervised model comparison
+      ↓
+Internal metrics and stability checks
+      ↓
+Interpretation, visualization, and limitations
 ```
 
----
+## Evaluation
 
-## 📈 Key Findings
+The notebook uses method-appropriate evidence such as silhouette score, Davies-Bouldin index, cluster stability, retrieval similarity, graph structure, anomaly-score diagnostics, and post-hoc synthetic checks. No demo result is presented as a production benchmark.
 
-* Collaborative filtering offered strong personalisation but struggled with new users/books (cold-start)
-* Content-based filtering improved recall for niche books and new items
-* The hybrid approach achieved the best balance of diversity + relevance
-* Metadata quality (genre, author) had substantial impact on recommendation coverage and novelty
+## Repository structure
 
----
+```text
+├── Books recommendation dataset.ipynb
+└── README.md
+```
 
-## 🚀 Future Improvements
+## How to run
 
-* Incorporate user demographics and implicit feedback (time spent, favourite lists) for richer profiles
-* Implement latent factor models (matrix factorisation, SVD) or deep-learning embeddings for higher accuracy
-* Deploy a real-time recommendation API or web interface (Flask/Streamlit) for end-users
-* Use A/B testing and live feedback to refine algorithms and evaluate user engagement
-* Expand dataset with book content features (reviews, summaries, embedding from NLP) to improve cold-start handling
+From the repository root:
 
----
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r "Unsupervised Learning Projects/requirements.txt"
+jupyter lab "Unsupervised Learning Projects/Book Recommendation Engine/Books recommendation dataset.ipynb"
+```
 
-## 🧑‍💻 Author
+Run the notebook from top to bottom. Saved outputs are included for review.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Responsible use
+
+Discovered groups and anomaly flags do not establish identity, intent, causality, risk, or business impact. Production use requires domain review, representative data, privacy controls, monitoring, and decision-specific evaluation.
+
+## Author
+
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

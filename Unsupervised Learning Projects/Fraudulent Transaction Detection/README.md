@@ -1,93 +1,77 @@
-# 🔍 Fraudulent Transaction Detection
+# Fraudulent Transaction Detection
 
-A machine learning project focused on detecting fraudulent transactions using unsupervised/anomaly‐detection techniques and transaction data.
+An unsupervised fraud-triage demonstration using behavioral transaction features and two anomaly detectors.
 
----
+## Project status
 
-## 📌 Project Overview
+- **Portfolio decision:** Maintained — existing executed notebook retained
+- **Learning type:** Unsupervised learning
+- **Core method:** Isolation Forest and Local Outlier Factor
+- **Execution:** Notebook executed successfully with outputs committed
 
-This project implements a full pipeline: ingesting transaction data, performing exploratory analysis to understand normal vs anomalous behavior, engineering features that capture irregularities, applying unsupervised anomaly detection models, and evaluating detection efficacy. The objective is to identify likely fraud cases without relying extensively on labelled fraud data, thereby supporting real-time fraud monitoring and investigations.
+## Problem statement
 
----
+The project demonstrates how patterns, similarities, communities, or anomalies can be discovered without using a prediction target during model fitting. Results are interpreted as exploratory signals rather than ground truth.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
-* **Techniques:** Unsupervised models such as Isolation Forest, Local Outlier Factor, Autoencoders (anomaly detection) ([MDPI][1])
+The maintained notebook uses deterministic synthetic transactions with injected anomalies for post-hoc evaluation. The scenario labels are not used to fit the detectors.
 
----
+The notebook documents its data contract, reproducible seed, quality checks, and any synthetic proxy labels used only for retrospective diagnostics.
 
-## 🔄 Workflow Summary
+## Workflow
 
-### 1. Data Collection
-
-Transaction dataset containing features such as transaction amount, time, merchant category, account history, geographical location, and other behavioural signals.
-Possible challenge: severe class imbalance (fraud cases being rare) typical in fraud detection domains. ([Wikipedia][2])
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Distribution of transaction values, frequencies, merchant categories.
-* Visualisations of anomaly indicators (e.g., unusually large amounts, unusual time/location patterns).
-* Checking feature correlations, missing values, outliers, and data imbalances.
-
-### 3. Feature Engineering
-
-* Derived features such as: amount relative to average for user, transaction frequency per account, deviation from normal spending behaviour, time‐of‐day/day‐of‐week features.
-* Encoding categorical variables (merchant type, region).
-* Scaling numerical features.
-* Possibly reducing dimensionality or combining features for anomaly detection.
-
-### 4. Modeling (Unsupervised / Anomaly Detection)
-
-* Fit unsupervised anomaly detection models, e.g., Isolation Forest, Local Outlier Factor, Autoencoders, One-Class SVM. These treat fraud as “rare anomalies” rather than defined classes. ([Medium][3])
-* Choose thresholds for anomaly score (e.g., top 1% highest anomaly scores flagged for investigation).
-* Possibly ensemble multiple models (OR‐ensemble) to improve recall of anomalies.
-
-### 5. Evaluation & Insights
-
-* Evaluate by measuring recall (detection of known fraud cases), precision (false alarms), possibly ROC/AUC if labels available.
-* Analyse flagged anomaly cases: what features triggered the anomaly, pattern of flagged accounts.
-* Provide insights such as: transaction patterns that frequently trigger flags, types of merchants or regions with more anomalies.
-
----
-
-## 📁 Project Structure
-
-```
-Fraudulent-Transaction-Detection/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Feature representation and scaling
+      ↓
+Unsupervised model comparison
+      ↓
+Internal metrics and stability checks
+      ↓
+Interpretation, visualization, and limitations
 ```
 
----
+## Evaluation
 
-## 📈 Key Findings
+The notebook uses method-appropriate evidence such as silhouette score, Davies-Bouldin index, cluster stability, retrieval similarity, graph structure, anomaly-score diagnostics, and post-hoc synthetic checks. No demo result is presented as a production benchmark.
 
-* Behavioural signals such as high deviation from account baseline spending and transactions outside typical time / location windows were strong anomaly indicators.
-* Unsupervised models identified many flagged transactions for further investigation; thresholds tuned to balance true-fraud capture vs alert volume.
-* Feature engineering (especially user- or account-level rolling features) significantly improved anomaly detection performance over raw transaction features.
-* The pipeline supports fraud-investigation teams by providing prioritized alerts rather than classifying every transaction.
+## Repository structure
 
----
+```text
+├── Anomaly Detection.ipynb
+└── README.md
+```
 
-## 🚀 Future Improvements
+## How to run
 
-* Incorporate supervised or semi-supervised learning when fraud labels become available, for hybrid modelling.
-* Integrate streaming data architecture (real-time feature engineering and model scoring) for live fraud detection.
-* Add explainability (e.g., SHAP values) for anomaly flags so investigators understand why a transaction was flagged.
-* Periodically retrain and recalibrate model to detect evolving fraud patterns and avoid model drift.
-* Expand feature set to include device-fingerprint, geolocation drift, merchant network anomalies for richer detection.
+From the repository root:
 
----
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r "Unsupervised Learning Projects/requirements.txt"
+jupyter lab "Unsupervised Learning Projects/Fraudulent Transaction Detection/Anomaly Detection.ipynb"
+```
 
-## 🧑‍💻 Author
+Run the notebook from top to bottom. Saved outputs are included for review.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Responsible use
+
+Discovered groups and anomaly flags do not establish identity, intent, causality, risk, or business impact. Production use requires domain review, representative data, privacy controls, monitoring, and decision-specific evaluation.
+
+## Author
+
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

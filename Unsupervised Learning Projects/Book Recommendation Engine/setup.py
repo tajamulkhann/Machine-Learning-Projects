@@ -1,24 +1,20 @@
-from setuptools import setup
+"""Package metadata for the Book Recommendation Engine demo."""
 
-with open("README.md","r", encoding="utf-8") as f:
-    long_description = f.read()
-
-REPO_NAME = "Books-Recommender-System-Using-Machine-Learning"
-AUTHOR_USER_NAME = "FaeyO"
-SRC_REPO = "src"
-LIST_OF_REQUIREMENTS = ['streamlit', 'numpy','scikit-learn']
+from setuptools import find_packages, setup
 
 
 setup(
-    name=SRC_REPO,
-    version ='0.0.1',
-    author=AUTHOR_USER_NAME,
-    description="A small package for Movie Recommender System",
-    long_description=long_description,
-    long_description_content_type='text/markdown',
-    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
-    author_email="foyinbo250@gmail.com",
-    packages=[SRC_REPO],
-    python_requires=">=3.9.16",
-    install_requires=LIST_OF_REQUIREMENTS
+    name="tajamul-book-recommendation-engine",
+    version="1.0.0",
+    author="Tajamul Khan",
+    description="An item-based Book-Crossing recommendation demo",
+    url="https://github.com/tajamulkhann/Machine-Learning-Projects",
+    packages=find_packages(),
+    python_requires=">=3.10",
+    install_requires=[
+        "numpy>=1.26,<3",
+        "pandas>=2.1,<3",
+        "scikit-learn>=1.4,<2",
+        "streamlit>=1.36,<2",
+    ],
 )

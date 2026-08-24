@@ -1,101 +1,77 @@
-# 🧩 Customer Segmentation Using Clustering Techniques
+# Customer Segmentation Using Clustering Techniques
 
-A machine learning project focused on segmenting customers using unsupervised clustering techniques to uncover meaningful groups based on behavior and demographics.
+A reproducible RFM-style customer segmentation project with internal metrics, stability checks, and interpretable profiles.
 
----
+## Project status
 
-## 📌 Project Overview
+- **Portfolio decision:** Refurbished — non-portable Kaggle path and incomplete execution replaced
+- **Learning type:** Unsupervised learning
+- **Core method:** K-Means and agglomerative clustering with robust preprocessing
+- **Execution:** Notebook executed successfully with outputs committed
 
-This project implements a full unsupervised learning workflow: collecting customer transaction and demographic data; exploratory analysis to understand patterns; feature engineering; applying clustering algorithms to segment customers; and interpreting cluster profiles for actionable business insights.
+## Problem statement
 
----
+The project demonstrates how patterns, similarities, communities, or anomalies can be discovered without using a prediction target during model fitting. Results are interpreted as exploratory signals rather than ground truth.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, matplotlib, seaborn, scikit-learn
-* **Environment:** Jupyter Notebook / Google Colab
+A deterministic domain-shaped demo dataset replaces the unavailable external-only dataset so the workflow executes end to end. Results are demo evidence only.
 
----
+The notebook documents its data contract, reproducible seed, quality checks, and any synthetic proxy labels used only for retrospective diagnostics.
 
-## 🔄 Workflow Summary
+## Workflow
 
-### 1. Data Collection
-
-Dataset comprises customer attributes such as age, gender, spending score, annual income, number of purchases, preferred product categories, and other behavioural metrics.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Visualisations of customer demographics and spending distributions
-* Scatter plots & pair-plots of income vs spending score, purchase frequency vs income
-* Correlation and descriptive statistics for behavioural features
-* Identification of outliers, skewness, and segmentation potential
-
-### 3. Feature Engineering
-
-* Encoding categorical variables (gender, preferred category)
-* Creating derived features like average purchase value, frequency per month, recency score
-* Scaling/normalising numerical features for clustering compatibility
-* Dimensionality reduction (e.g., PCA) if needed for high-dimensional data
-
-### 4. Clustering Modeling
-
-Techniques applied:
-
-* **K-Means Clustering** (primary)
-* **Hierarchical Clustering** or **DBSCAN** (optional exploration)
-* Choosing optimal number of clusters via Elbow method, Silhouette score
-
-### 5. Evaluation & Interpretation
-
-* Silhouette score and Davies–Bouldin index to assess clustering quality
-* Cluster profiling: reviewing cluster centers, size, and behaviour
-* Visualising clusters (e.g., 2D PCA plot) and interpreting segments for business use
-
-**Result:** Identified distinct customer segments such as “high income/high spend”, “low income/low spend”, “frequent but low-value purchases”, enabling targeted marketing strategies.
-
-### 6. Insights & Business Application
-
-* Mapped segments to business action: e.g., premium customers targeted with loyalty offers, low-activity segment engaged with retention campaigns
-* Provided actionable recommendations: personalised marketing, tiered loyalty programs, upsell/cross-sell opportunities
-
----
-
-## 📁 Project Structure
-
-```
-Customer-Segmentation-Clustering/
-│── data/
-│── notebooks/
-│── src/
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Feature representation and scaling
+      ↓
+Unsupervised model comparison
+      ↓
+Internal metrics and stability checks
+      ↓
+Interpretation, visualization, and limitations
 ```
 
----
+## Evaluation
 
-## 📈 Key Findings
+The notebook uses method-appropriate evidence such as silhouette score, Davies-Bouldin index, cluster stability, retrieval similarity, graph structure, anomaly-score diagnostics, and post-hoc synthetic checks. No demo result is presented as a production benchmark.
 
-* Income and spending score emerged as the most discriminative features for segmentation
-* Clusters captured clear behavioural differences enabling marketing strategy alignment
-* Feature scaling and selection crucial for meaningful cluster separation
-* Segmentation based on clustering offers low-cost strategic insight for business outreach
+## Repository structure
 
----
+```text
+├── Customer Segmentation using Clustering Algorithms.ipynb
+└── README.md
+```
 
-## 🚀 Future Improvements
+## How to run
 
-* Incorporate temporal customer behaviour (recency/frequency/monetary) for advanced segmentation (RFM modelling)
-* Use deeper unsupervised techniques such as Gaussian Mixture Models or Self-Organising Maps for non-linear segment discovery
-* Deploy interactive dashboards to explore segments and KPIs dynamically
-* Integrate external data (social media sentiment, churn history) to refine segment profiles
-* Continuously update segment assignments with incoming real-time customer data
+From the repository root:
 
----
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r "Unsupervised Learning Projects/requirements.txt"
+jupyter lab "Unsupervised Learning Projects/Customer Segmentation Using Clustering Techniques/Customer Segmentation using Clustering Algorithms.ipynb"
+```
 
-## 🧑‍💻 Author
+Run the notebook from top to bottom. Saved outputs are included for review.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Responsible use
+
+Discovered groups and anomaly flags do not establish identity, intent, causality, risk, or business impact. Production use requires domain review, representative data, privacy controls, monitoring, and decision-specific evaluation.
+
+## Author
+
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

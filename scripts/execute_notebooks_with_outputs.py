@@ -21,7 +21,7 @@ import traceback
 from pathlib import Path
 
 os.environ.setdefault("MPLBACKEND", "Agg")
-os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib-supervised-portfolio")
+os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib-ml-portfolio")
 
 import matplotlib.pyplot as plt
 

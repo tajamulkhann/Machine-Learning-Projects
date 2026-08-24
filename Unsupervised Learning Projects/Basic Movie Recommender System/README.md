@@ -1,103 +1,77 @@
-# 🎥 Basic Movie Recommender System
+# Basic Movie Recommender System
 
-A machine-learning project focused on building a simple, user-centric movie recommendation engine using unsupervised techniques (e.g., similarity measures) and content metadata or user-rating data.
+An item-based movie recommender built from the audience-rating files included in the project.
 
----
+## Project status
 
-## 📌 Project Overview
+- **Portfolio decision:** Refurbished — legacy notebook replaced; project identity and source datasets retained
+- **Learning type:** Unsupervised learning
+- **Core method:** Mean-centered item similarity with cosine distance and minimum rating support
+- **Execution:** Notebook executed successfully with outputs committed
 
-This project implements a recommendation workflow: gathering movie metadata (titles, genres, ratings), preprocessing the data, computing similarity metrics (e.g., cosine similarity, Pearson correlation), and generating personalized recommendations. The goal is to help users discover movies aligned with their past likes or preferences.
+## Problem statement
 
----
+The project demonstrates how patterns, similarities, communities, or anomalies can be discovered without using a prediction target during model fitting. Results are interpreted as exploratory signals rather than ground truth.
 
-## 🧰 Tech Stack
+## Dataset
 
-* **Language:** Python
-* **Libraries:** pandas, numpy, scikit-learn, maybe Surprise (for collaborative filtering)
-* **Environment:** Jupyter Notebook / Google Colab
+Included MovieLens-style rating and movie-title files are loaded through portable project-relative paths.
 
----
+The notebook documents its data contract, reproducible seed, quality checks, and any synthetic proxy labels used only for retrospective diagnostics.
 
-## 🔄 Workflow Summary
+## Workflow
 
-### 1. Data Collection
-
-* Load a dataset of movies and user-ratings or metadata.
-* Example features: movie ID, title, genres, user ID, rating.
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Explore rating distribution (how many ratings per movie/user).
-* Visualise movie genres, number of ratings per movie.
-* Identify sparsity: many users rate few movies, many movies have few ratings.
-
-### 3. Pre-processing & Similarity Computation
-
-* Create a user-movie rating matrix (users × movies).
-* Handle missing values (users who didn’t rate a movie) by filling zeros or ignoring.
-* Compute similarity:
-
-  * **Item-based**: similarity between movies (e.g., cosine between rating vectors)
-  * **User-based**: similarity between users (optional)
-* Alternatively, compute content-based similarity using genres/metadata.
-
-### 4. Recommendation Generation
-
-* Given a target user or movie, fetch top-N similar movies using similarity matrix.
-* Filter out movies the user has already seen/rated.
-* Return recommendation list with titles and relevant details.
-
-### 5. Evaluation (optional)
-
-* Use metrics such as precision@k, recall@k, RMSE (if ratings predicted), or comparison with known test set.
-* For unsupervised/simple system, demonstrate qualitative examples of recommendations.
-
----
-
-## 📁 Project Structure
-
-```
-Basic-Movie-Recommender/
-│── data/
-│   ├── movies.csv
-│   ├── ratings.csv
-│   └── processed/
-│── notebooks/
-│   └── movie_recommender.ipynb
-│── src/
-│   ├── preprocess.py
-│   ├── similarity.py
-│   └── recommender.py
-│── README.md
-│── requirements.txt
+```text
+Data validation
+      ↓
+Feature representation and scaling
+      ↓
+Unsupervised model comparison
+      ↓
+Internal metrics and stability checks
+      ↓
+Interpretation, visualization, and limitations
 ```
 
----
+## Evaluation
 
-## 📈 Key Findings
+The notebook uses method-appropriate evidence such as silhouette score, Davies-Bouldin index, cluster stability, retrieval similarity, graph structure, anomaly-score diagnostics, and post-hoc synthetic checks. No demo result is presented as a production benchmark.
 
-* Content-based or item-based similarity provide meaningful recommendations even with minimal user history.
-* The “cold-start” problem remains: new users or movies with very few ratings/metadata get less accurate suggestions.
-* Genre and popularity (number of ratings) are strong signals for recommendation quality.
-* Simpler methods (e.g., cosine similarity on genres) allow fast prototyping and decent recommendations without heavy modelling.
+## Repository structure
 
----
+```text
+├── Movie Recommender System.ipynb
+└── README.md
+```
 
-## 🚀 Future Improvements
+## How to run
 
-* Implement **collaborative filtering** (e.g., matrix factorization) to capture latent user-movie interactions.
-* Build a **hybrid system** combining content-based + collaborative approaches for better accuracy.
-* Deploy as a web application with user login, watch history tracking and interactive recommendation UI.
-* Introduce **explainability**: show user why a movie was recommended (e.g., “Because you liked X”).
-* Enhance evaluation with true test-split, online A/B testing, or real user feedback.
+From the repository root:
 
----
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r "Unsupervised Learning Projects/requirements.txt"
+jupyter lab "Unsupervised Learning Projects/Basic Movie Recommender System/Movie Recommender System.ipynb"
+```
 
-## 🧑‍💻 Author
+Run the notebook from top to bottom. Saved outputs are included for review.
 
-**[Tajamul Khan](https://www.linkedin.com/in/tajamulkhann/) – Data Scientist & AI Engineer**
+## Technologies
 
----
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib and Seaborn
+- Jupyter
+
+## Responsible use
+
+Discovered groups and anomaly flags do not establish identity, intent, causality, risk, or business impact. Production use requires domain review, representative data, privacy controls, monitoring, and decision-specific evaluation.
+
+## Author
+
+**Tajamul Khan** — Data Scientist and AI Engineer
 
 ## Let's Connect <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Handshake.gif" height="30px" style="max-width:100%;">
 

@@ -5,7 +5,7 @@ A practical portfolio of supervised and unsupervised machine-learning projects w
 | Collection | Projects | Explore |
 |---|---:|---|
 | Supervised Learning | 50 | [Browse projects](Supervised%20Learning%20Projects/) |
-| Unsupervised Learning | 5 | [Browse projects](Unsupervised%20Learning%20Projects/) |
+| Unsupervised Learning | 30 | [Browse projects](Unsupervised%20Learning%20Projects/) |
 
 <img width="1280" height="720" alt="Machine learning projects" src="https://github.com/user-attachments/assets/12905a9b-ac44-4115-8faa-473a666c9651" />
 
