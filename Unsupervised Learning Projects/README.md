@@ -1,14 +1,25 @@
 # Unsupervised Machine Learning Projects
 
-A 30-project portfolio covering modern clustering, anomaly detection, topic discovery, vector retrieval, recommendation, association-rule mining, dimensionality reduction, and graph communities.
+A curated portfolio of **30 unsupervised machine learning projects** covering clustering, anomaly detection, topic discovery, recommendation systems, vector retrieval, association-rule mining, dimensionality reduction, behavioral segmentation, and graph community detection.
 
-## Portfolio composition
+The repository is designed as a practical reference for learners, practitioners, recruiters, and reviewers who want to explore complete unsupervised learning workflows with reproducible code and preserved notebook outputs.
 
-- **5 existing projects preserved:** 2 maintained and 3 selectively refurbished
-- **25 new projects:** selected for current portfolio relevance across GenAI, vector search, reliability, cybersecurity, industry, geospatial, healthcare, and recommendation use cases
-- **30 executed notebooks:** every project contains saved code outputs
+## Repository Highlights
 
-The selection was informed by current clustering, recommendation, embedding, and retrieval activity documented by [Kaggle's Clustering Cup 2026](https://www.kaggle.com/competitions/clustering-cup-2026), [Hugging Face Sentence Transformers](https://huggingface.co/docs/hub/en/sentence-transformers), and the [GitHub unsupervised-machine-learning topic](https://github.com/topics/unsupervised-machine-learning).
+* End-to-end unsupervised learning projects with practical problem statements.
+* Clustering, anomaly detection, NLP, recommendation, GenAI, cybersecurity, healthcare, industrial, geospatial, and customer analytics use cases.
+* Executed notebook outputs preserved for easier review.
+* Reproducible workflows with preprocessing, model selection, internal validation, stability analysis, interpretation, and documented limitations.
+* A mix of maintained original projects, selectively refurbished projects, and newly added portfolio projects.
+
+## Portfolio Standards
+
+* No prediction target is used during unsupervised model fitting.
+* Internal metrics are paired with stability, interpretability, and domain-relevance checks.
+* Synthetic or known labels, when available, are used only for retrospective evaluation—not during model training.
+* Demo datasets and generated results are deterministic and clearly identified.
+* Anomaly scores, clusters, recommendations, and discovered patterns are presented as decision-support signals rather than ground truth.
+* Relative paths, reproducible seeds, dependency guidance, saved notebook outputs, and the locked creator branding are preserved.
 
 ## Projects
 
@@ -44,19 +55,6 @@ The selection was informed by current clustering, recommendation, embedding, and
 | 28 | [AI Image Embedding Clustering and Visual Search](AI%20Image%20Embedding%20Clustering%20and%20Visual%20Search/) | Embedding clustering and retrieval | New |
 | 29 | [Product Catalog Similarity Recommender](Product%20Catalog%20Similarity%20Recommender/) | Content recommendation | New |
 | 30 | [Social Network Community Detection](Social%20Network%20Community%20Detection/) | Graph community detection | New |
-
-## Portfolio standards
-
-- No prediction target is used during unsupervised model fitting
-- Internal metrics are paired with stability and interpretation checks
-- Synthetic labels, when present, are reserved for retrospective diagnostics
-- Demo datasets and results are explicitly labelled
-- Paths are portable, seeds are reproducible, and notebook outputs are committed
-- Recommendations and anomaly flags are framed as decision-support signals, not ground truth
-
-## Audit trail
-
-The keep/refurbish rationale for the original five projects is recorded in [AUDIT.md](AUDIT.md).
 
 ## Author
 
