@@ -1,16 +1,18 @@
 # Supervised Machine Learning Projects
 
-This collection contains **50 supervised-learning projects** spanning classification, regression, NLP, forecasting, healthcare, finance, operations, risk, and customer analytics.
+A curated portfolio of **50 supervised machine learning projects** covering classification, regression, NLP, forecasting, healthcare, finance, operations, risk, and customer analytics.
 
-The original collection was audited project by project:
+The repository is designed as a practical reference for learners, practitioners, recruiters, and reviewers who want to explore complete machine learning workflows with reproducible code and preserved notebook outputs.
 
-- **18 maintained projects** kept their existing code and saved outputs.
-- **11 refurbished projects** received targeted repairs for broken paths, duplicate work, missing data/docs, or incorrect problem framing.
-- **21 new projects** add current, portfolio-ready use cases with reproducible data and executed outputs.
+## Repository Highlights
 
-Read the [selective audit report](AUDIT.md) for the keep/refurbish decisions and project-level findings.
+- End-to-end supervised learning projects with practical problem statements.
+- Classification, regression, NLP, forecasting, risk, healthcare, finance, and customer analytics use cases.
+- Executed notebook outputs preserved for easier review.
+- Reproducible workflows with validation, holdout evaluation, and documented limitations.
+- A mix of maintained original projects, refurbished projects, and newly added portfolio projects.
 
-## Portfolio standards
+## Portfolio Standards
 
 - Saved notebook outputs remain visible for reviewers.
 - Every project includes a baseline, validation strategy, holdout evaluation, and limitations.
@@ -18,7 +20,7 @@ Read the [selective audit report](AUDIT.md) for the keep/refurbish decisions and
 - New demo datasets are deterministic and clearly identified—no synthetic result is presented as a real-world benchmark.
 - Relative paths, reproducible seeds, dependency guidance, and the locked creator branding are preserved.
 
-## Project index
+## Project Index
 
 | Project | Status | Data | Notebook evidence |
 |---|---|---|---|
@@ -73,7 +75,7 @@ Read the [selective audit report](AUDIT.md) for the keep/refurbish decisions and
 | [Used Vehicle Price Prediction using Regression Algorithm](Used%20Vehicle%20Price%20Prediction%20using%20Regression%20Algorithm/) | Maintained | Original data/notebook | Existing executed output retained |
 | [Vehicle Insurance Claim Fraud Detection using Classification Algorithms](Vehicle%20Insurance%20Claim%20Fraud%20Detection%20using%20Classification%20Algorithms/) | Maintained | Original data/notebook | Existing executed output retained |
 
-## Run the portfolio
+## Getting Started
 
 ```bash
 python -m venv .venv
@@ -81,7 +83,7 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r "Supervised Learning Projects/requirements.txt"
 ```
 
-Open any project notebook and run cells from top to bottom. Existing projects with external dataset links retain their recorded outputs; new projects run without external downloads.
+Each project directory contains the relevant notebook and supporting assets. Notebooks can be executed from top to bottom after installing the repository requirements. Existing projects that rely on external dataset links retain their recorded outputs, while newly added projects are designed to run without external downloads.
 
 ## Author
 
